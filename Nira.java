@@ -9,23 +9,21 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class Nira implements ActionListener {
-	JFrame Frame,Frame2;
+	JFrame Frame,Frame2,Frame3;
 	JButton red1,red2,red3,blank1,blank2,blank3,blue1,blue2,blue3;
-	JButton onevsone;
-	
+	JButton onevsone,vsbot;
 	JTextField Playername1,Playername2;
 	String player1,player2;
 	int red1_x,red1_y,red2_x,red2_y,red3_x,red3_y,blank1_x,blank1_y,blank2_x,blank2_y,blank3_x,blank3_y,blue1_x,blue1_y,blue2_x,blue2_y,blue3_x,blue3_y;
 	int nirapositions[][];
 	boolean b1 = false,b2 = false,b3 = false;
 	boolean redNIRA = false, blueNIRA = false;
+	boolean playername = true,botness = false;
 	String currentselectedbutton = "null",player="red";
 	int templocvalue_x,templocvalue_y,temporarybuttonvalue_x,temporarybuttonvalue_y,temporaryblankvalue_x,temporaryblankvalue_y;
 	int reda=0,redb=0,redc=0,bluea=0,blueb=0,bluec=0;
-	JButton Startingplayerbutton;
-	
+	JButton Startingplayerbutton,Startingbotbutton;
 	JLabel moves1,moves2,playerr1,playerr2,linela;
-	
 	JButton line1,line2,line3,line4,line5,line6,line7,line8,line9,line10,line11,line12;
 	JButton bl1,bl2,bl3,bl4,bl5,bl6,bl7,bl8,bl9,bl10,bl11,bl12,bl13,bl14,bl15;
 	JButton blo1,blo2,blo3,blo4,blo5,blo6,blo7,blo8,blo9,blo10,blo11,blo12,blo13,blo14,blo15;
@@ -472,7 +470,7 @@ public class Nira implements ActionListener {
 		
 		
 		
-		Playername1 = new JTextField("Red player");
+		Playername1 = new JTextField("BOT");
 		Playername1.setHorizontalAlignment(JTextField.CENTER);
 		Playername1.setBounds(50, 37, 100, 30);
 		Playername1.setBackground(Color.WHITE);
@@ -495,15 +493,30 @@ public class Nira implements ActionListener {
 		bluerepr.setBackground(Color.BLUE);
 		bluerepr.setEnabled(false);
 		
+		JLabel Startingbot = new JLabel(" Select if bot starts ");
+		Startingbot.setBounds(50, 03, 150, 30);
+		Startingbot.setBackground(Color.gray);
+		Startingbot.setOpaque(true);
+		Startingbot.setHorizontalAlignment(SwingConstants.CENTER);
+		Startingbot.setForeground(Color.WHITE);
+		
+		Startingbotbutton = new JButton();
+		Startingbotbutton.setBounds(210, 03, 30, 30);
+		Startingbotbutton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+		Startingbotbutton.setBackground(Color.white);
+		Startingbotbutton.setEnabled(true);
+		Startingbotbutton.addActionListener(this);
+		
+		
 		JLabel Startingplayer = new JLabel(" Select Starting Player");
-		Startingplayer.setBounds(50, 140, 150, 30);
+		Startingplayer.setBounds(50, 110, 150, 30);
 		Startingplayer.setBackground(Color.gray);
 		Startingplayer.setOpaque(true);
 		Startingplayer.setHorizontalAlignment(SwingConstants.CENTER);
 		Startingplayer.setForeground(Color.WHITE);
 		
 		Startingplayerbutton = new JButton();
-		Startingplayerbutton.setBounds(210, 140, 30, 30);
+		Startingplayerbutton.setBounds(210, 110, 30, 30);
 		Startingplayerbutton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
 		Startingplayerbutton.setBackground(Color.white);
 		Startingplayerbutton.setEnabled(true);
@@ -511,11 +524,21 @@ public class Nira implements ActionListener {
 		
 		
 		
+		vsbot = new JButton("BOT");
+		vsbot.setBounds(215, 400, 100, 50);
+		vsbot.setEnabled(true);
+		vsbot.setBackground(Color.RED);
+		vsbot.addActionListener(this);
+		
+		
 		Frame.add(bluerepr);
 		Frame.add(redrepr);
 		Frame.add(Startingplayer);
 		Frame.add(Startingplayerbutton);
 		Frame.add(onevsone);
+	    Frame.add(vsbot);
+	    Frame.add(Startingbot);
+	    Frame.add(Startingbotbutton);
 		Frame.add(Playername1);
 		Frame.add(Playername2);
 		
@@ -534,9 +557,176 @@ public class Nira implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		
 		
-		if(e.getSource() == Startingplayerbutton) {
+		if(e.getSource() == Startingbotbutton) {
+			Startingplayerbutton.setBackground(Color.white);
+			vsbot.setEnabled(true);
+			onevsone.setEnabled(false);
+			Playername1.setText("BOT");
+			playername = false;
 			
+			if(botness == false) {
+				botness = true;
+				Startingbotbutton.setBackground(Color.green);
+			}
+			else if(botness == true) {
+				botness = false;
+				Startingbotbutton.setBackground(Color.white);
+			}
+		}
+		
+		
+		if(e.getSource() == vsbot) {
+			Frame3 = new JFrame();
+			Frame3.setTitle("Nira");
+			Frame3.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			Frame3.setSize(700, 800);
+			Frame3.setVisible(true);
+			Frame3.setLayout(null);
+			Frame3.setLocation(400, 10);
+			
+			
+			
+			Frame3.add(moves1);
+			Frame3.add(moves2);
+            Frame3.add(linela);
+			Frame3.add(red1);
+			Frame3.add(red2);
+			Frame3.add(red3);
+			Frame3.add(blank1);
+			Frame3.add(blank2);
+			Frame3.add(blank3);
+			Frame3.add(blue1);
+			Frame3.add(blue2);
+			Frame3.add(blue3);
+			
+			Frame3.add(line1);
+			Frame3.add(line2);
+			Frame3.add(line3);
+			Frame3.add(line4);
+			Frame3.add(line5);
+			Frame3.add(line6);
+		    Frame3.add(line7);
+			Frame3.add(line8);
+			Frame3.add(line9);
+			Frame3.add(line10);
+			Frame3.add(line11);
+			Frame3.add(line12);
+			Frame3.add(bl1);
+			Frame3.add(bl2);
+			Frame3.add(bl3);
+			Frame3.add(bl4);
+			Frame3.add(bl5);
+			Frame3.add(bl6);
+			Frame3.add(bl7);
+			Frame3.add(bl8);
+			Frame3.add(bl9);
+			Frame3.add(bl10);
+			Frame3.add(bl11);
+			Frame3.add(bl12);
+			Frame3.add(bl13);
+			Frame3.add(bl14);
+			Frame3.add(bl15);
+			Frame3.add(blo1);
+			Frame3.add(blo2);
+			Frame3.add(blo3);
+			Frame3.add(blo4);
+			Frame3.add(blo5);
+			Frame3.add(blo6);
+			Frame3.add(blo7);
+			Frame3.add(blo8);
+			Frame3.add(blo9);
+			Frame3.add(blo10);
+			Frame3.add(blo11);
+			Frame3.add(blo12);
+			Frame3.add(blo13);
+			Frame3.add(blo14);
+			Frame3.add(blo15);
+			Frame3.add(bloc1);
+			Frame3.add(bloc2);
+			Frame3.add(bloc3);
+			Frame3.add(bloc4);
+			Frame3.add(bloc5);
+			Frame3.add(bloc6);
+			Frame3.add(bloc7);
+			Frame3.add(bloc8);
+			Frame3.add(bloc9);
+			Frame3.add(bloc10);
+			Frame3.add(bloc11);
+			Frame3.add(bloc12);
+			Frame3.add(bloc13);
+			Frame3.add(bloc14);
+			Frame3.add(bloc15);
+			Frame3.add(block1);
+			Frame3.add(block2);
+			Frame3.add(block3);
+			Frame3.add(block4);
+			Frame3.add(block5);
+			Frame3.add(block6);
+			Frame3.add(block7);
+			Frame3.add(block8);
+			Frame3.add(block9);
+			Frame3.add(block10);
+			Frame3.add(block11);
+			Frame3.add(block12);
+			Frame3.add(block13);
+			Frame3.add(block14);
+			Frame3.add(block15);
+			Frame3.add(playerr1);
+			Frame3.add(playerr2);
+			
+            reset();
+			
+			player1 = Playername1.getText();
+			player2 = Playername2.getText();
+			
+			if(botness == true) {
+				blue1.setEnabled(false);
+				blue2.setEnabled(false);
+				blue3.setEnabled(false);
+				playerr2.setBorder(null);
+        		playerr1.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
+        		player = "red";
+			}
+			if(botness == false) {
+				red1.setEnabled(false);
+				red2.setEnabled(false);
+				red3.setEnabled(false);
+				playerr1.setBorder(null);
+        		playerr2.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
+        		player = "blue";
+			}
+			
+			if(player1 == "BOT") {
+				playerr1.setText("BOT");
+			}
+			else {
+				playerr1.setText(player1);
+			}
+			if(player2 == "Blue player") {
+				playerr2.setText("Blue Player");
+			}
+			else {
+				playerr2.setText(player2);
+			}
+			
+			blank1.setEnabled(false);
+			blank2.setEnabled(false);
+			blank3.setEnabled(false);
+			
+			
+			
+		}
+		
+		
+		if(e.getSource() == Startingplayerbutton) {
+			Startingbotbutton.setBackground(Color.white);
+			vsbot.setEnabled(false);
 			onevsone.setEnabled(true);
+			if(playername == false) {
+			Playername1.setText("Red player");
+			playername = true;
+			botness = false;
+			}
 			
 			if(player == "red") {
 				player = "blue";
