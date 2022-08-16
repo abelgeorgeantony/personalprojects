@@ -18,7 +18,7 @@ public class Nira implements ActionListener {
 	int nirapositions[][];
 	boolean b1 = false,b2 = false,b3 = false;
 	boolean redNIRA = false, blueNIRA = false;
-	boolean playername = true,botness = false;
+	boolean playername = true,botness = false,botmode = false;
 	String currentselectedbutton = "null",player="red";
 	int templocvalue_x,templocvalue_y,temporarybuttonvalue_x,temporarybuttonvalue_y,temporaryblankvalue_x,temporaryblankvalue_y;
 	int reda=0,redb=0,redc=0,bluea=0,blueb=0,bluec=0;
@@ -585,6 +585,8 @@ public class Nira implements ActionListener {
 			Frame3.setLocation(400, 10);
 			
 			
+			botmode = true;
+			
 			
 			Frame3.add(moves1);
 			Frame3.add(moves2);
@@ -683,9 +685,13 @@ public class Nira implements ActionListener {
 				blue1.setEnabled(false);
 				blue2.setEnabled(false);
 				blue3.setEnabled(false);
+				red1.setEnabled(false);
+				red2.setEnabled(false);
+				red3.setEnabled(false);
 				playerr2.setBorder(null);
         		playerr1.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
         		player = "red";
+        		botbrain();
 			}
 			if(botness == false) {
 				red1.setEnabled(false);
@@ -726,6 +732,7 @@ public class Nira implements ActionListener {
 			Playername1.setText("Red player");
 			playername = true;
 			botness = false;
+			
 			}
 			
 			if(player == "red") {
@@ -776,6 +783,8 @@ public class Nira implements ActionListener {
 			Frame2.setLayout(null);
 			Frame2.setLocation(400, 10);
 			
+			
+			botmode = false;
 			
 			
 			Frame2.add(moves1);
@@ -949,28 +958,7 @@ public class Nira implements ActionListener {
 	}
 		
 		public void BlankButtonWorking(JButton Button) {
-			if(player == "red") {
-        		blue1.setEnabled(true);
-        		blue2.setEnabled(true);
-        		blue3.setEnabled(true);
-        		red1.setEnabled(false);
-        		red2.setEnabled(false);
-        		red3.setEnabled(false);
-        		player = "blue";
-        		playerr1.setBorder(null);
-        		playerr2.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
-        	}
-        	else if(player == "blue") {
-        		blue1.setEnabled(false);
-        		blue2.setEnabled(false);
-        		blue3.setEnabled(false);
-        		red1.setEnabled(true);
-        		red2.setEnabled(true);
-        		red3.setEnabled(true);
-        		player = "red";
-        		playerr1.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
-        		playerr2.setBorder(null);
-        	}
+     
         	
 			if(Button == blank1) {
         	if(currentselectedbutton == "red1") {
@@ -1200,6 +1188,40 @@ public class Nira implements ActionListener {
 			
         	
         		checknira();
+        		
+        		
+        		
+        		
+        		if(player == "red") {
+            		blue1.setEnabled(true);
+            		blue2.setEnabled(true);
+            		blue3.setEnabled(true);
+            		red1.setEnabled(false);
+            		red2.setEnabled(false);
+            		red3.setEnabled(false);
+            		player = "blue";
+            		playerr1.setBorder(null);
+            		playerr2.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
+            	}
+            	else if(player == "blue") {
+            		blue1.setEnabled(false);
+            		blue2.setEnabled(false);
+            		blue3.setEnabled(false);
+            		if(botmode == false) {
+            		red1.setEnabled(true);
+            		red2.setEnabled(true);
+            		red3.setEnabled(true);
+            		}else if(botmode == true) {
+            			botbrain();
+            		}
+            		player = "red";
+            		playerr1.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
+            		playerr2.setBorder(null);
+            	}
+        		
+        		
+        		
+        		
         	
         	
         	moves1.setText("MOVED : "+reda+" , "+redb+" , "+redc);
@@ -2278,5 +2300,31 @@ public class Nira implements ActionListener {
 		blue3_y = 500;
 		blue3.setBounds(blue3_x, blue3_y, 50, 50);
 	}
+	
+	
+	public void botbrain() {
+		player = "red";
+		if((reda==0)&&(redb==0)&&(redc==0)) {
+			if(blank1_y == 295) {
+			currentselectedbutton = "red1";
+			BlankButtonWorking(blank1);
+			}
+			else if(blank2_y == 295) {
+			currentselectedbutton = "red1";
+			BlankButtonWorking(blank2);
+			}
+		}
+		else if((reda==1)&&(redb==0)&&(redc==0)) {
+			if(blank3_y == 295) {
+			currentselectedbutton = "red3";
+			BlankButtonWorking(blank3);
+			}
+			else if(blank2_y == 295) {
+			currentselectedbutton = "red3";
+			BlankButtonWorking(blank2);
+			}
+		}
+	}
+	
 	
 	}
