@@ -18,7 +18,7 @@ public class Nira implements ActionListener {
 	int nirapositions[][];
 	boolean b1 = false,b2 = false,b3 = false;
 	boolean redNIRA = false, blueNIRA = false;
-	boolean playername = true,botness = false,botmode = false;
+	boolean playername = false,botness = false,botmode = false;
 	String currentselectedbutton = "null",player="red";
 	int templocvalue_x,templocvalue_y,temporarybuttonvalue_x,temporarybuttonvalue_y,temporaryblankvalue_x,temporaryblankvalue_y;
 	int reda=0,redb=0,redc=0,bluea=0,blueb=0,bluec=0;
@@ -567,10 +567,12 @@ public class Nira implements ActionListener {
 			if(botness == false) {
 				botness = true;
 				Startingbotbutton.setBackground(Color.green);
+				player = "red";
 			}
 			else if(botness == true) {
 				botness = false;
 				Startingbotbutton.setBackground(Color.white);
+				player = "blue";
 			}
 		}
 		
@@ -728,8 +730,9 @@ public class Nira implements ActionListener {
 			Startingbotbutton.setBackground(Color.white);
 			vsbot.setEnabled(false);
 			onevsone.setEnabled(true);
+			
 			if(playername == false) {
-			Playername1.setText("Red player");
+		    Playername1.setText("Red player");
 			playername = true;
 			botness = false;
 			
@@ -958,7 +961,7 @@ public class Nira implements ActionListener {
 	}
 		
 		public void BlankButtonWorking(JButton Button) {
-     
+			
         	
 			if(Button == blank1) {
         	if(currentselectedbutton == "red1") {
@@ -1191,7 +1194,6 @@ public class Nira implements ActionListener {
         		
         		
         		
-        		
         		if(player == "red") {
             		blue1.setEnabled(true);
             		blue2.setEnabled(true);
@@ -1218,7 +1220,6 @@ public class Nira implements ActionListener {
             		playerr1.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
             		playerr2.setBorder(null);
             	}
-        		
         		
         		
         		
