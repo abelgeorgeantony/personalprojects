@@ -702,6 +702,7 @@ public class Nira implements ActionListener {
 				playerr1.setBorder(null);
         		playerr2.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
         		player = "blue";
+        		
 			}
 			
 			if(player1 == "BOT") {
@@ -1204,8 +1205,8 @@ public class Nira implements ActionListener {
             		player = "blue";
             		playerr1.setBorder(null);
             		playerr2.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
-            	}
-            	else if(player == "blue") {
+            		
+            	}else if(player == "blue") {
             		blue1.setEnabled(false);
             		blue2.setEnabled(false);
             		blue3.setEnabled(false);
@@ -1213,12 +1214,13 @@ public class Nira implements ActionListener {
             		red1.setEnabled(true);
             		red2.setEnabled(true);
             		red3.setEnabled(true);
-            		}else if(botmode == true) {
-            			botbrain();
-            		}
             		player = "red";
             		playerr1.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
             		playerr2.setBorder(null);
+            		}else if(botmode == true) {
+            			
+            			botbrain();               		
+            		}
             	}
         		
         		
@@ -1851,9 +1853,6 @@ public class Nira implements ActionListener {
 				}
 			}
 		}
-		
-		
-		
 		else if(red1_x == 50) {
 			if(red1_y == 500) {
 				if(red2_x == 200) {
@@ -2111,9 +2110,6 @@ public class Nira implements ActionListener {
 				}
 			}
 		}
-		
-		
-		
 		else if(blue1_x == 50) {
 			if(blue1_y == 500) {
 				if(blue2_x == 200) {
@@ -2240,7 +2236,6 @@ public class Nira implements ActionListener {
     		blue2.setOpaque(false);
     		blue3.setEnabled(false);
     		blue3.setOpaque(false);
-    		
     		playerr1.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 3));
     		playerr2.setBorder(null);
     		
@@ -2254,7 +2249,6 @@ public class Nira implements ActionListener {
     		blue1.setEnabled(false);
     		blue2.setEnabled(false);
     		blue3.setEnabled(false);
-    		
     		playerr1.setBorder(null);
     		playerr2.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 3));
     		
@@ -2305,27 +2299,106 @@ public class Nira implements ActionListener {
 	
 	public void botbrain() {
 		player = "red";
+		playerr1.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
+		playerr2.setBorder(null);
+		
 		if((reda==0)&&(redb==0)&&(redc==0)) {
-			if(blank1_y == 295) {
-			currentselectedbutton = "red1";
-			BlankButtonWorking(blank1);
+			if((blank1_x == 45)&&(blank1_y == 295)) {
+				currentselectedbutton = "red1";
+				BlankButtonWorking(blank1);
 			}
-			else if(blank2_y == 295) {
-			currentselectedbutton = "red1";
-			BlankButtonWorking(blank2);
+			else if((blank1_x == 195)&&(blank1_y == 295)) {
+				currentselectedbutton = "red1";
+				BlankButtonWorking(blank1);
+			}
+			else if((blank2_x == 45)&&(blank2_y == 295)) {
+				currentselectedbutton = "red1";
+				BlankButtonWorking(blank2);
+			}
+			else if((blank2_x == 195)&&(blank2_y == 295)) {
+				currentselectedbutton = "red1";
+				BlankButtonWorking(blank2);
+			}
+			else if((blank3_x == 45)&&(blank3_y == 295)) {
+				currentselectedbutton = "red1";
+				BlankButtonWorking(blank3);
+			}
+			else if((blank3_x == 195)&&(blank3_y == 295)) {
+				currentselectedbutton = "red1";
+				BlankButtonWorking(blank3);
 			}
 		}
-		else if((reda==1)&&(redb==0)&&(redc==0)) {
-			if(blank3_y == 295) {
-			currentselectedbutton = "red3";
-			BlankButtonWorking(blank3);
+		else if((reda>0)&&(redb==0)&&(redc==0)) {
+			if((blank1_x == 345)&&(blank1_y == 295)) {
+				currentselectedbutton = "red3";		
+				BlankButtonWorking(blank1);
 			}
-			else if(blank2_y == 295) {
-			currentselectedbutton = "red3";
-			BlankButtonWorking(blank2);
+			else if((blank1_x == 195)&&(blank1_y == 295)) {
+				currentselectedbutton = "red3";
+				BlankButtonWorking(blank1);
+			}
+			else if((blank2_x == 345)&&(blank2_y == 295)) {
+				currentselectedbutton = "red3";
+				BlankButtonWorking(blank2);
+			}
+			else if((blank2_x == 195)&&(blank2_y == 295)) {
+				currentselectedbutton = "red3";
+				BlankButtonWorking(blank2);
+			}
+			else if((blank3_x == 345)&&(blank3_y == 295)) {
+				currentselectedbutton = "red3";
+				BlankButtonWorking(blank3);
+			}
+			else if((blank3_x == 195)&&(blank3_y == 295)) {
+				currentselectedbutton = "red3";
+				BlankButtonWorking(blank3);
+			}
+			else if((red1_x == 50)&&(red1_y == 300)){
+				if((blank1_x == 45)&&(blank1_y == 495)) {
+					currentselectedbutton = "red1";		
+					BlankButtonWorking(blank1);
+				}
+				else if((blank2_x == 45)&&(blank2_y == 495)) {
+					currentselectedbutton = "red1";		
+					BlankButtonWorking(blank2);
+				}
+				else if((blank3_x == 45)&&(blank3_y == 495)) {
+					currentselectedbutton = "red1";		
+					BlankButtonWorking(blank3);
+				}
+			}
+			else {
+				if((blank1_x == 45)&&(blank1_y == 95)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank1);
+				}
+				else if((blank2_x == 45)&&(blank2_y == 95)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank2);
+				}
+				else if((blank3_x == 45)&&(blank3_y == 95)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank3);
+				}
 			}
 		}
+		else if((reda>0)&&(redb==0)&&(redc>0)) {
+			if((blank1_x == 345)&&(blank1_y == 95)) {
+				currentselectedbutton = "red2";		
+				BlankButtonWorking(blank1);
+			}
+			else if((blank2_x == 345)&&(blank2_y == 95)) {
+				currentselectedbutton = "red2";		
+				BlankButtonWorking(blank2);
+			}
+			else if((blank3_x == 345)&&(blank3_y == 95)) {
+				currentselectedbutton = "red2";		
+				BlankButtonWorking(blank3);
+			}
+		}
+		
+		checknira();
+
 	}
-	
 	
 	}
