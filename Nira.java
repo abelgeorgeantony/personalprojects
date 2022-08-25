@@ -14,6 +14,7 @@ public class Nira implements ActionListener {
 	JButton onevsone,vsbot;
 	JTextField Playername1,Playername2;
 	String player1,player2;
+	String colorlock="Green";
 	int red1_x,red1_y,red2_x,red2_y,red3_x,red3_y,blank1_x,blank1_y,blank2_x,blank2_y,blank3_x,blank3_y,blue1_x,blue1_y,blue2_x,blue2_y,blue3_x,blue3_y;
 	int nirapositions[][];
 	boolean b1 = false,b2 = false,b3 = false;
@@ -1203,8 +1204,13 @@ public class Nira implements ActionListener {
             		red2.setEnabled(false);
             		red3.setEnabled(false);
             		player = "blue";
+            		if(colorlock == "Green") {
             		playerr1.setBorder(null);
             		playerr2.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
+            		}else if(colorlock == "Yellow") {
+            			playerr2.setBorder(null);
+            			playerr1.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 3));
+            		}
             		
             	}else if(player == "blue") {
             		blue1.setEnabled(false);
@@ -1215,8 +1221,13 @@ public class Nira implements ActionListener {
             		red2.setEnabled(true);
             		red3.setEnabled(true);
             		player = "red";
+            		if(colorlock == "Green") {
             		playerr1.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
             		playerr2.setBorder(null);
+            		}else if(colorlock =="Yellow") {
+            			playerr2.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 3));
+            			playerr1.setBorder(null);
+            		}
             		}else if(botmode == true) {
             			
             			botbrain();               		
@@ -1853,7 +1864,8 @@ public class Nira implements ActionListener {
 				}
 			}
 		}
-		else if(red1_x == 50) {
+		
+		if(red1_x == 50) {
 			if(red1_y == 500) {
 				if(red2_x == 200) {
 					if(red2_y == 300) {
@@ -1872,7 +1884,7 @@ public class Nira implements ActionListener {
 				}
 			}
 		}
-		else if(red1_x == 50) {
+		else if(red1_x ==50) {
 			if(red1_y == 500) {
 				if(red2_x == 350) {
 					if(red2_y == 100) {
@@ -2110,7 +2122,8 @@ public class Nira implements ActionListener {
 				}
 			}
 		}
-		else if(blue1_x == 50) {
+		
+		if(blue1_x == 50) {
 			if(blue1_y == 500) {
 				if(blue2_x == 200) {
 					if(blue2_y == 300) {
@@ -2205,7 +2218,7 @@ public class Nira implements ActionListener {
 				}
 			}
 		}
-		else if(blue1_x == 350) {
+		else if(blue1_x ==350) {
 			if(blue1_y == 100) {
 				if(blue2_x == 200) {
 					if(blue2_y == 300) {
@@ -2238,6 +2251,7 @@ public class Nira implements ActionListener {
     		blue3.setOpaque(false);
     		playerr1.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 3));
     		playerr2.setBorder(null);
+    		colorlock = "Yellow";
     		
     	}else if(blueNIRA == true) {
     		red1.setEnabled(false);
@@ -2251,6 +2265,7 @@ public class Nira implements ActionListener {
     		blue3.setEnabled(false);
     		playerr1.setBorder(null);
     		playerr2.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 3));
+    		colorlock = "Yellow";
     		
     	}
 		
@@ -2267,6 +2282,7 @@ public class Nira implements ActionListener {
 		bluec = 0;
 		moves1.setText("MOVED : "+reda+" , "+redb+" , "+redc);
     	moves2.setText("MOVED : "+bluea+" , "+blueb+" , "+bluec);
+    	colorlock = "Green";
 		red1_x = 50;
 		red1_y = 100;
 		red1.setBounds(red1_x, red1_y, 50, 50);
@@ -2294,6 +2310,12 @@ public class Nira implements ActionListener {
 		blue3_x = 350;
 		blue3_y = 500;
 		blue3.setBounds(blue3_x, blue3_y, 50, 50);
+		red1.setOpaque(true);
+		red2.setOpaque(true);
+		red3.setOpaque(true);
+		blue1.setOpaque(true);
+		blue2.setOpaque(true);
+		blue3.setOpaque(true);
 	}
 	
 	
