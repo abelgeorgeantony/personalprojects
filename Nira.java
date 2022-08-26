@@ -1727,517 +1727,204 @@ public class Nira implements ActionListener {
 		
 	
 	public void checknira() {
-		
+		if(((reda>0)&&(redb>0))&&(redc>0)) {
+			
+			
+    				
 		if(red1_x == red2_x) {
 			if(red2_x == red3_x) {
-				if(reda>0) {
-	        		if(redb>0) {
-	        			if(redc>0) {
-	        				redNIRA = true;
-	        			}
-	        		}
-	        	}		
+	        	redNIRA = true;	
 			}
 		}
+		
 		else if(red1_y == red2_y) {
 			if(red2_y == red3_y) {
-				if(reda>0) {
-	        		if(redb>0) {
-	        			if(redc>0) {
-	        				redNIRA = true;
-	        			}
-	        		}
-	        	}		
+				redNIRA = true;		
 			}
 		}
-		else if(red1_x == 50) {
-			if(red1_y == 100) {
-				if(red2_x == 200) {
-					if(red2_y == 300) {
-						if(red3_x == 350) {
-							if(red3_y == 500) {
-								if(reda>0) {
-					        		if(redb>0) {
-					        			if(redc>0) {
-					        				redNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
+		
+		else if((red1_x == 50)&&(red1_y == 100)) {
+			if((red2_x == 200)&&(red2_y == 300)) {
+				if((red3_x == 350)&&(red3_y == 500)) {
+								redNIRA = true;
 				}
 			}
-		}
-		else if(red1_x == 50) {
-			if(red1_y == 100) {
-				if(red2_x == 350) {
-					if(red2_y == 500) {
-						if(red3_x == 200) {
-							if(red3_y == 300) {
-								if(reda>0) {
-					        		if(redb>0) {
-					        			if(redc>0) {
-					        				redNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(red1_x == 200) {
-			if(red1_y == 300) {
-				if(red2_x == 50) {
-					if(red2_y == 100) {
-						if(red3_x == 350) {
-							if(red3_y == 500) {
-								if(reda>0) {
-					        		if(redb>0) {
-					        			if(redc>0) {
-					        				redNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(red1_x == 350) {
-			if(red1_y == 500) {
-				if(red2_x == 50) {
-					if(red2_y == 100) {
-						if(red3_x == 200) {
-							if(red3_y == 300) {
-								if(reda>0) {
-					        		if(redb>0) {
-					        			if(redc>0) {
-					        				redNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(red1_x == 200) {
-			if(red1_y == 300) {
-				if(red2_x == 350) {
-					if(red2_y == 500) {
-						if(red3_x == 50) {
-							if(red3_y == 100) {
-								if(reda>0) {
-					        		if(redb>0) {
-					        			if(redc>0) {
-					        				redNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(red1_x == 350) {
-			if(red1_y == 500) {
-				if(red2_x == 200) {
-					if(red2_y == 300) {
-						if(red3_x == 50) {
-							if(red3_y == 100) {
-								if(reda>0) {
-					        		if(redb>0) {
-					        			if(redc>0) {
-					        				redNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
+			else if((red2_x == 350)&&(red2_y == 500)) {
+				if((red3_x == 200)&&(red3_y == 300)) {
+							redNIRA = true;
 				}
 			}
 		}
 		
-		if(red1_x == 50) {
-			if(red1_y == 500) {
-				if(red2_x == 200) {
-					if(red2_y == 300) {
-						if(red3_x == 350) {
-							if(red3_y == 100) {
-								if(reda>0) {
-					        		if(redb>0) {
-					        			if(redc>0) {
-					        				redNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
+		else if((red1_x == 200)&&(red1_y == 300)) {
+			if((red2_x == 50)&&(red2_y == 100)) {
+				if((red3_x == 350)&&(red3_y == 500)) {
+								redNIRA = true;
+				}
+			}
+			else if((red2_x == 350)&&(red2_y == 500)) {
+				if((red3_x == 50)&&(red3_y == 100)) {
+							redNIRA = true;
 				}
 			}
 		}
-		else if(red1_x ==50) {
-			if(red1_y == 500) {
-				if(red2_x == 350) {
-					if(red2_y == 100) {
-						if(red3_x == 200) {
-							if(red3_y == 300) {
-								if(reda>0) {
-					        		if(redb>0) {
-					        			if(redc>0) {
-					        				redNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
+		
+		else if((red1_x == 350)&&(red1_y == 500)) {
+			if((red2_x == 50)&&(red2_y == 100)) {
+				if((red3_x == 200)&&(red3_y == 300)) {
+								redNIRA = true;
 				}
 			}
-		}
-		else if(red1_x == 200) {
-			if(red1_y == 300) {
-				if(red2_x == 50) {
-					if(red2_y == 500) {
-						if(red3_x == 350) {
-							if(red3_y == 100) {
-								if(reda>0) {
-					        		if(redb>0) {
-					        			if(redc>0) {
-					        				redNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(red1_x == 350) {
-			if(red1_y == 100) {
-				if(red2_x == 50) {
-					if(red2_y == 500) {
-						if(red3_x == 200) {
-							if(red3_y == 300) {
-								if(reda>0) {
-					        		if(redb>0) {
-					        			if(redc>0) {
-					        				redNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(red1_x == 200) {
-			if(red1_y == 300) {
-				if(red2_x == 350) {
-					if(red2_y == 100) {
-						if(red3_x == 50) {
-							if(red3_y == 500) {
-								if(reda>0) {
-					        		if(redb>0) {
-					        			if(redc>0) {
-					        				redNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(red1_x == 350) {
-			if(red1_y == 100) {
-				if(red2_x == 200) {
-					if(red2_y == 300) {
-						if(red3_x == 50) {
-							if(red3_y == 500) {
-								if(reda>0) {
-					        		if(redb>0) {
-					        			if(redc>0) {
-					        				redNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
+			else if((red2_x == 200)&&(red2_y == 300)) {
+				if((red3_x == 50)&&(red3_y == 100)) {
+							redNIRA = true;
 				}
 			}
 		}
 		
 		
+		else if((red1_x == 50)&&(red1_y == 500)) {
+			if((red2_x == 200)&&(red2_y == 300)) {
+				if((red3_x == 350)&&(red3_y == 100)) {
+								redNIRA = true;
+				}
+			}
+			else if((red2_x == 350)&&(red2_y == 100)) {
+				if((red3_x == 200)&&(red3_y == 300)) {
+							redNIRA = true;
+				}
+			}
+		}
+		
+		else if((red1_x == 200)&&(red1_y == 300)) {
+			if((red2_x == 50)&&(red2_y == 500)) {
+				if((red3_x == 350)&&(red3_y == 100)) {
+								redNIRA = true;
+				}
+			}
+			else if((red2_x == 350)&&(red2_y == 100)) {
+				if((red3_x == 50)&&(red3_y == 500)) {
+							redNIRA = true;
+				}
+			}
+		}
+		
+		else if((red1_x == 350)&&(red1_y == 100)) {
+			if((red2_x == 200)&&(red2_y == 300)) {
+				if((red3_x == 50)&&(red3_y == 500)) {
+								redNIRA = true;
+				}
+			}
+			else if((red2_x == 50)&&(red2_y == 500)) {
+				if((red3_x == 200)&&(red3_y == 300)) {
+							redNIRA = true;
+				}
+			}
+		}
+		
+	}
 		
 		
 		
-		
+	if(((bluea>0)&&(blueb>0))&&(bluec>0)) {
+    		
 		
 		if(blue1_x == blue2_x) {
-			if(blue2_x == blue3_x) {
-				if(bluea>0) {
-	        		if(blueb>0) {
-	        			if(bluec>0) {
-	        				blueNIRA = true;
-	        			}
-	        		}
-	        	}			
+		   if(blue2_x == blue3_x) {
+	           blueNIRA = true;	
 			}
 		}
+		
 		else if(blue1_y == blue2_y) {
 			if(blue2_y == blue3_y) {
-				if(bluea>0) {
-	        		if(blueb>0) {
-	        			if(bluec>0) {
-	        				blueNIRA = true;
-	        			}
-	        		}
-	        	}			
+	        	blueNIRA = true;
 			}
 		}
-		else if(blue1_x == 50) {
-			if(blue1_y == 100) {
-				if(blue2_x == 200) {
-					if(blue2_y == 300) {
-						if(blue3_x == 350) {
-							if(blue3_y == 500) {
-								if(bluea>0) {
-					        		if(blueb>0) {
-					        			if(bluec>0) {
-					        				blueNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
+		
+		
+		else if((blue1_x == 50)&&(blue1_y == 100)) {
+			if((blue2_x == 200)&&(blue2_y == 300)) {
+				if((blue3_x == 350)&&(blue3_y == 500)) {
+					blueNIRA = true;
 				}
 			}
-		}
-		else if(blue1_x == 50) {
-			if(blue1_y == 100) {
-				if(blue2_x == 350) {
-					if(blue2_y == 500) {
-						if(blue3_x == 200) {
-							if(blue3_y == 300) {
-								if(bluea>0) {
-					        		if(blueb>0) {
-					        			if(bluec>0) {
-					        				blueNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(blue1_x == 200) {
-			if(blue1_y == 300) {
-				if(blue2_x == 50) {
-					if(blue2_y == 100) {
-						if(blue3_x == 350) {
-							if(blue3_y == 500) {
-								if(bluea>0) {
-					        		if(blueb>0) {
-					        			if(bluec>0) {
-					        				blueNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(blue1_x == 350) {
-			if(blue1_y == 500) {
-				if(blue2_x == 50) {
-					if(blue2_y == 100) {
-						if(blue3_x == 200) {
-							if(blue3_y == 300) {
-								if(bluea>0) {
-					        		if(blueb>0) {
-					        			if(bluec>0) {
-					        				blueNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(blue1_x == 200) {
-			if(blue1_y == 300) {
-				if(blue2_x == 350) {
-					if(blue2_y == 500) {
-						if(blue3_x == 50) {
-							if(blue3_y == 100) {
-								if(bluea>0) {
-					        		if(blueb>0) {
-					        			if(bluec>0) {
-					        				blueNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(blue1_x == 350) {
-			if(blue1_y == 500) {
-				if(blue2_x == 200) {
-					if(blue2_y == 300) {
-						if(blue3_x == 50) {
-							if(blue3_y == 100) {
-								if(bluea>0) {
-					        		if(blueb>0) {
-					        			if(bluec>0) {
-					        				blueNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
+			else if((blue2_x == 350)&&(blue2_y == 500)) {
+				if((blue3_x == 200)&&(blue3_y == 300)) {
+					blueNIRA = true;
 				}
 			}
 		}
 		
-		if(blue1_x == 50) {
-			if(blue1_y == 500) {
-				if(blue2_x == 200) {
-					if(blue2_y == 300) {
-						if(blue3_x == 350) {
-							if(blue3_y == 100) {
-								if(bluea>0) {
-					        		if(blueb>0) {
-					        			if(bluec>0) {
-					        				blueNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
+		else if((blue1_x == 200)&&(blue1_y == 300)) {
+			if((blue2_x == 50)&&(blue2_y == 100)) {
+				if((blue3_x == 350)&&(blue3_y == 500)) {
+					blueNIRA = true;
 				}
 			}
-		}
-		else if(blue1_x == 50) {
-			if(blue1_y == 500) {
-				if(blue2_x == 350) {
-					if(blue2_y == 100) {
-						if(blue3_x == 200) {
-							if(blue3_y == 300) {
-								if(bluea>0) {
-					        		if(blueb>0) {
-					        			if(bluec>0) {
-					        				blueNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(blue1_x == 200) {
-			if(blue1_y == 300) {
-				if(blue2_x == 50) {
-					if(blue2_y == 500) {
-						if(blue3_x == 350) {
-							if(blue3_y == 100) {
-								if(bluea>0) {
-					        		if(blueb>0) {
-					        			if(bluec>0) {
-					        				blueNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(blue1_x == 350) {
-			if(blue1_y == 100) {
-				if(blue2_x == 50) {
-					if(blue2_y == 500) {
-						if(blue3_x == 200) {
-							if(blue3_y == 300) {
-								if(bluea>0) {
-					        		if(blueb>0) {
-					        			if(bluec>0) {
-					        				blueNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(blue1_x == 200) {
-			if(blue1_y == 300) {
-				if(blue2_x == 350) {
-					if(blue2_y == 100) {
-						if(blue3_x == 50) {
-							if(blue3_y == 500) {
-								if(bluea>0) {
-					        		if(blueb>0) {
-					        			if(bluec>0) {
-					        				blueNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
-				}
-			}
-		}
-		else if(blue1_x ==350) {
-			if(blue1_y == 100) {
-				if(blue2_x == 200) {
-					if(blue2_y == 300) {
-						if(blue3_x == 50) {
-							if(blue3_y == 500) {
-								if(bluea>0) {
-					        		if(blueb>0) {
-					        			if(bluec>0) {
-					        				blueNIRA = true;
-					        			}
-					        		}
-					        	}
-							}
-						}
-					}
+			else if((blue2_x == 350)&&(blue2_y == 500)) {
+				if((blue3_x == 50)&&(blue3_y == 100)) {
+					blueNIRA = true;
 				}
 			}
 		}
 		
+		else if((blue1_x == 350)&&(blue1_y == 500)) {
+			if((blue2_x == 50)&&(blue2_y == 100)) {
+				if((blue3_x == 200)&&(blue3_y == 300)) {
+					blueNIRA = true;
+				}
+			}
+			else if((blue2_x == 200)&&(blue2_y == 300)) {
+				if((blue3_x == 50)&&(blue3_y == 100)) {
+					blueNIRA = true;
+				}
+			}
+		}
+		
+		
+		else if((blue1_x == 50)&&(blue1_y == 500)) {
+			if((blue2_x == 200)&&(blue2_y == 300)) {
+				if((blue3_x == 350)&&(blue3_y == 100)) {
+					blueNIRA = true;
+				}
+			}
+			else if((blue2_x == 350)&&(blue2_y == 100)) {
+				if((blue3_x == 200)&&(blue3_y == 300)) {
+					blueNIRA = true;
+				}
+			}
+		}
+		
+		else if((blue1_x == 200)&&(blue1_y == 300)) {
+			if((blue2_x == 350)&&(blue2_y == 100)) {
+				if((blue3_x == 50)&&(blue3_y == 500)) {
+					blueNIRA = true;
+				}
+			}
+			else if((blue2_x == 50)&&(blue2_y == 500)) {
+				if((blue3_x == 350)&&(blue3_y == 100)) {
+					blueNIRA = true;
+				}
+			}
+		}
+		
+		else if((blue1_x == 350)&&(blue1_y == 100)) {
+			if((blue2_x == 200)&&(blue2_y == 300)) {
+				if((blue3_x == 50)&&(blue3_y == 500)) {
+					blueNIRA = true;
+				}
+			}
+			else if((blue2_x == 50)&&(blue2_y == 500)) {
+				if((blue3_x == 200)&&(blue3_y == 300)) {
+					blueNIRA = true;
+				}
+			}
+		}
+		
+		
+		
+		
+	}
 		
 		if(redNIRA == true) {
     		red1.setEnabled(false);
