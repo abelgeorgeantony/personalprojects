@@ -963,7 +963,9 @@ public class Nira implements ActionListener {
 	}
 		
 		public void BlankButtonWorking(JButton Button) {
-			
+			blank1.setOpaque(false);
+			blank2.setOpaque(false);
+			blank3.setOpaque(false);
         	
 			if(Button == blank1) {
         	if(currentselectedbutton == "red1") {
@@ -1701,21 +1703,30 @@ public class Nira implements ActionListener {
 				
 					 if(b1 == true) {
 						 blank1.setEnabled(true);
+						 blank1.setOpaque(true);
+						 blank1.setBackground(Color.lightGray);
 					 }
 					 else if(b1==false) {
 						 blank1.setEnabled(false);
+						 blank1.setOpaque(false);
 					 }
 					 if(b2 == true) {
 						 blank2.setEnabled(true);
+						 blank2.setOpaque(true);
+						 blank2.setBackground(Color.lightGray);
 					 }
 					 else if(b2==false) {
 						 blank2.setEnabled(false);
+						 blank2.setOpaque(false);
 					 }
 					 if(b3 == true) {
 						 blank3.setEnabled(true);
+						 blank3.setOpaque(true);
+						 blank3.setBackground(Color.lightGray);
 					 }
 					 else if(b3==false) {
 						 blank3.setEnabled(false);
+						 blank3.setOpaque(false);
 					 }
 						b1 = false;
 						b2 = false;
@@ -1837,7 +1848,7 @@ public class Nira implements ActionListener {
 		
 		else if(blue1_y == blue2_y) {
 			if(blue2_y == blue3_y) {
-	        	blueNIRA = true;
+	        	blueNIRA = true;	
 			}
 		}
 		
@@ -1961,6 +1972,8 @@ public class Nira implements ActionListener {
 	
 	
 	public void reset() {
+		redNIRA = false;
+		blueNIRA = false;
 		reda = 0;
 		redb = 0;
 		redc = 0;
@@ -2062,6 +2075,20 @@ public class Nira implements ActionListener {
 				currentselectedbutton = "red3";
 				BlankButtonWorking(blank3);
 			}
+			else if((red2_x == 200)&&(red2_y == 100)){
+				if((blank1_x == 45)&&(blank1_y == 95)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank1);
+				}
+				else if((blank2_x == 45)&&(blank2_y == 95)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank2);
+				}
+				else if((blank3_x == 45)&&(blank3_y == 95)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank3);
+				}
+			}
 			else if((red1_x == 50)&&(red1_y == 300)){
 				if((blank1_x == 45)&&(blank1_y == 495)) {
 					currentselectedbutton = "red1";		
@@ -2076,20 +2103,7 @@ public class Nira implements ActionListener {
 					BlankButtonWorking(blank3);
 				}
 			}
-			else {
-				if((blank1_x == 45)&&(blank1_y == 95)) {
-					currentselectedbutton = "red2";		
-					BlankButtonWorking(blank1);
-				}
-				else if((blank2_x == 45)&&(blank2_y == 95)) {
-					currentselectedbutton = "red2";		
-					BlankButtonWorking(blank2);
-				}
-				else if((blank3_x == 45)&&(blank3_y == 95)) {
-					currentselectedbutton = "red2";		
-					BlankButtonWorking(blank3);
-				}
-			}
+			
 		}
 		else if((reda>0)&&(redb==0)&&(redc>0)) {
 			if((blank1_x == 345)&&(blank1_y == 95)) {
@@ -2104,9 +2118,51 @@ public class Nira implements ActionListener {
 				currentselectedbutton = "red2";		
 				BlankButtonWorking(blank3);
 			}
+			else if((blank1_x == 195)&&(blank1_y == 295)) {
+				currentselectedbutton = "red2";		
+				BlankButtonWorking(blank1);
+			}
+			else if((blank2_x == 195)&&(blank2_y == 295)) {
+				currentselectedbutton = "red2";		
+				BlankButtonWorking(blank2);
+			}
+			else if((blank3_x == 195)&&(blank3_y == 295)) {
+				currentselectedbutton = "red2";		
+				BlankButtonWorking(blank3);
+			}
+		}
+		else if((reda>0)&&(redb>0)&&(redc==0)) {
+			if((blank1_x == 345)&&(blank1_y == 295)) {
+				currentselectedbutton = "red3";		
+				BlankButtonWorking(blank1);
+			}
+			else if((blank2_x == 345)&&(blank2_y == 295)) {
+				currentselectedbutton = "red3";		
+				BlankButtonWorking(blank2);
+			}
+			else if((blank3_x == 345)&&(blank3_y == 295)) {
+				currentselectedbutton = "red3";		
+				BlankButtonWorking(blank3);
+			}
+		}
+		else if((reda>0)&&(redb>0)&&(redc>0)) {
+			if((red1_x == 50)&&(red1_y == 300)){
+				if((blank1_x == 45)&&(blank1_y == 495)) {
+					currentselectedbutton = "red1";		
+					BlankButtonWorking(blank1);
+				}
+				else if((blank2_x == 45)&&(blank2_y == 495)) {
+					currentselectedbutton = "red1";		
+					BlankButtonWorking(blank2);
+				}
+				else if((blank3_x == 45)&&(blank3_y == 495)) {
+					currentselectedbutton = "red1";		
+					BlankButtonWorking(blank3);
+				}
+			}
 		}
 		
-		checknira();
+	
 
 	}
 	
