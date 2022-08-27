@@ -1740,9 +1740,20 @@ public class Nira implements ActionListener {
 	public void checknira() {
 		if(((reda>0)&&(redb>0))&&(redc>0)) {
 			
-			
-    				
-		if(red1_x == red2_x) {
+		if((red1_x == 200)&&(red1_y == 300)) {
+				if((red2_x == 50)&&(red2_y == 500)) {
+					if((red3_x == 350)&&(red3_y == 100)) {
+									redNIRA = true;
+					}
+				}
+				else if((red2_x == 350)&&(red2_y == 100)) {
+					if((red3_x == 50)&&(red3_y == 500)) {
+								redNIRA = true;
+					}
+				}
+			}
+						
+		else if(red1_x == red2_x) {
 			if(red2_x == red3_x) {
 	        	redNIRA = true;	
 			}
@@ -1807,19 +1818,6 @@ public class Nira implements ActionListener {
 			}
 		}
 		
-		else if((red1_x == 200)&&(red1_y == 300)) {
-			if((red2_x == 50)&&(red2_y == 500)) {
-				if((red3_x == 350)&&(red3_y == 100)) {
-								redNIRA = true;
-				}
-			}
-			else if((red2_x == 350)&&(red2_y == 100)) {
-				if((red3_x == 50)&&(red3_y == 500)) {
-							redNIRA = true;
-				}
-			}
-		}
-		
 		else if((red1_x == 350)&&(red1_y == 100)) {
 			if((red2_x == 200)&&(red2_y == 300)) {
 				if((red3_x == 50)&&(red3_y == 500)) {
@@ -1838,9 +1836,21 @@ public class Nira implements ActionListener {
 		
 		
 	if(((bluea>0)&&(blueb>0))&&(bluec>0)) {
-    		
 		
-		if(blue1_x == blue2_x) {
+		if((blue1_x == 200)&&(blue1_y == 300)) {
+			if((blue2_x == 50)&&(blue2_y == 500)) {
+				if((blue3_x == 350)&&(blue3_y == 100)) {
+					blueNIRA = true;
+				}
+			}
+			else if((blue2_x == 350)&&(blue2_y == 100)) {
+				if((blue3_x == 50)&&(blue3_y == 500)) {
+					blueNIRA = true;
+				}
+			}
+		}
+		
+		else if(blue1_x == blue2_x) {
 		   if(blue2_x == blue3_x) {
 	           blueNIRA = true;	
 			}
@@ -1893,6 +1903,7 @@ public class Nira implements ActionListener {
 		}
 		
 		
+		
 		else if((blue1_x == 50)&&(blue1_y == 500)) {
 			if((blue2_x == 200)&&(blue2_y == 300)) {
 				if((blue3_x == 350)&&(blue3_y == 100)) {
@@ -1901,19 +1912,6 @@ public class Nira implements ActionListener {
 			}
 			else if((blue2_x == 350)&&(blue2_y == 100)) {
 				if((blue3_x == 200)&&(blue3_y == 300)) {
-					blueNIRA = true;
-				}
-			}
-		}
-		
-		else if((blue1_x == 200)&&(blue1_y == 300)) {
-			if((blue2_x == 350)&&(blue2_y == 100)) {
-				if((blue3_x == 50)&&(blue3_y == 500)) {
-					blueNIRA = true;
-				}
-			}
-			else if((blue2_x == 50)&&(blue2_y == 500)) {
-				if((blue3_x == 350)&&(blue3_y == 100)) {
 					blueNIRA = true;
 				}
 			}
@@ -1931,7 +1929,6 @@ public class Nira implements ActionListener {
 				}
 			}
 		}
-		
 		
 		
 		
