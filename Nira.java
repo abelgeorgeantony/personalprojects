@@ -2163,4 +2163,208 @@ public class Nira implements ActionListener {
 
 	}
 	
+	public boolean isMatchable(JButton needmatching, JButton match1, JButton match2, String checkingorder) {
+	int needmatching_x = 0,needmatching_y=0,match1_x=0,match1_y=0,match2_x=0,match2_y=0;	
+	if(needmatching == red1) {
+		needmatching_x = red1_x;
+		needmatching_y = red1_y;
+	}
+	else if(needmatching == red2) {
+		needmatching_x = red2_x;
+		needmatching_y = red2_y;
+	}
+	else if(needmatching == red3) {
+		needmatching_x = red3_x;
+		needmatching_y = red3_y;
+	}
+	
+	if(match1 == red1) {
+		match1_x = red1_x;
+		match1_y = red1_y;
+	}
+	else if(match1 == red2) {
+		match1_x = red2_x;
+		match1_y = red2_y;
+	}
+	else if(match1 == red3) {
+		match1_x = red3_x;
+		match1_y = red3_y;
+	}
+	
+	if(match2 == red1) {
+		match2_x = red1_x;
+		match2_y = red1_y;
+	}
+	else if(match2 == red2) {
+		match2_x = red2_x;
+		match2_y = red2_y;
+	}
+	else if(match2 == red3) {
+		match2_x = red3_x;
+		match2_y = red3_y;
+	}
+	
+	
+	if(checkingorder =="row") {
+		if(match1_y == 100) {
+			
+			if(match1_x == 50) {
+				if(match2_x == 200) {
+					if(blank1_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
+							return(true);
+						}
+					}
+					else if(blank2_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
+							return(true);
+						}
+					}
+					else if(blank3_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
+							return(true);
+						}
+					}
+				}
+			}
+			else if(match1_x == 50) {
+				if(match2_x == 350) {
+					if(blank1_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+					}
+					else if(blank2_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+					}
+					else if(blank3_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+					}
+				}
+			}
+			else if(match1_x == 200) {
+				if(match2_x == 50) {
+					if(blank1_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
+							return(true);
+						}
+					}
+					else if(blank2_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
+							return(true);
+						}
+					}
+					else if(blank3_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
+							return(true);
+						}
+					}
+				}
+			}
+			else if(match1_x == 200) {
+				if(match2_x == 350) {
+					if(blank1_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
+							return(true);
+						}
+					}
+					if(blank2_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
+							return(true);
+						}
+					}
+					if(blank3_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
+							return(true);
+						}
+					}
+				}
+			}
+			else if(match1_x == 350) {
+				if(match2_x == 50) {
+					if(blank1_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+					}
+					if(blank2_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+					}
+					if(blank3_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+					}
+				}
+			}
+			else if(match1_x == 350) {
+				if(match2_x == 200) {
+					if(blank1_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
+							return(true);
+						}
+					}
+					if(blank2_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
+							return(true);
+						}
+					}
+					if(blank3_y == 95) {
+						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+							return(true);
+						}
+						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
+							return(true);
+						}
+					}
+				}
+			}
+			
+		
+		}
+	}
+	
+	return(false);
+	}
+	
+	
 	}
