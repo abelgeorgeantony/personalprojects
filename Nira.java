@@ -16,7 +16,7 @@ public class Nira implements ActionListener {
 	String player1,player2;
 	String colorlock="Green";
 	int red1_x,red1_y,red2_x,red2_y,red3_x,red3_y,blank1_x,blank1_y,blank2_x,blank2_y,blank3_x,blank3_y,blue1_x,blue1_y,blue2_x,blue2_y,blue3_x,blue3_y;
-	boolean b1 = false,b2 = false,b3 = false,redNIRA = false, blueNIRA = false,playername = false,botness = false,botmode = false,isitmatchable;
+	boolean b1 = false,b2 = false,b3 = false,redNIRA = false, blueNIRA = false,playername = false,botness = false,botmode = false,isitmatchable = false;
 	String currentselectedbutton = "null",player="red";
 	int templocvalue_x,templocvalue_y,temporarybuttonvalue_x,temporarybuttonvalue_y,temporaryblankvalue_x,temporaryblankvalue_y;
 	int reda=0,redb=0,redc=0,bluea=0,blueb=0,bluec=0;
@@ -2070,20 +2070,6 @@ public class Nira implements ActionListener {
 				currentselectedbutton = "red3";
 				BlankButtonWorking(blank3);
 			}
-			else if((red2_x == 200)&&(red2_y == 100)){
-				if((blank1_x == 45)&&(blank1_y == 95)) {
-					currentselectedbutton = "red2";		
-					BlankButtonWorking(blank1);
-				}
-				else if((blank2_x == 45)&&(blank2_y == 95)) {
-					currentselectedbutton = "red2";		
-					BlankButtonWorking(blank2);
-				}
-				else if((blank3_x == 45)&&(blank3_y == 95)) {
-					currentselectedbutton = "red2";		
-					BlankButtonWorking(blank3);
-				}
-			}
 			else if((red1_x == 50)&&(red1_y == 300)){
 				if((blank1_x == 45)&&(blank1_y == 495)) {
 					currentselectedbutton = "red1";		
@@ -2095,6 +2081,32 @@ public class Nira implements ActionListener {
 				}
 				else if((blank3_x == 45)&&(blank3_y == 495)) {
 					currentselectedbutton = "red1";		
+					BlankButtonWorking(blank3);
+				}
+			}
+			else if((red2_x == 200)&&(red2_y == 100)) {
+				if((blank1_x == 195)&&(blank1_y == 295)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank1);
+				}
+				else if((blank2_x == 195)&&(blank2_y == 295)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank2);
+				}
+				else if((blank3_x == 195)&&(blank3_y == 295)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank3);
+				}
+				else if((blank1_x == 45)&&(blank1_y == 95)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank1);
+				}
+				else if((blank2_x == 45)&&(blank2_y == 95)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank2);
+				}
+				else if((blank3_x == 45)&&(blank3_y == 95)) {
+					currentselectedbutton = "red2";		
 					BlankButtonWorking(blank3);
 				}
 			}
@@ -2138,6 +2150,70 @@ public class Nira implements ActionListener {
 			else if((blank3_x == 345)&&(blank3_y == 295)) {
 				currentselectedbutton = "red3";		
 				BlankButtonWorking(blank3);
+			}
+			else if((blank1_x == 195)&&(blank1_y == 95)) {
+				currentselectedbutton = "red3";		
+				BlankButtonWorking(blank1);
+			}
+			else if((blank2_x == 195)&&(blank2_y == 95)) {
+				currentselectedbutton = "red3";		
+				BlankButtonWorking(blank2);
+			}
+			else if((blank3_x == 195)&&(blank3_y == 95)) {
+				currentselectedbutton = "red3";		
+				BlankButtonWorking(blank3);
+			}
+			else if((red2_x == 50)&&(red2_y == 100)) {
+				if((blank1_x == 195)&&(blank1_y == 295)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank1);
+				}
+				else if((blank2_x == 195)&&(blank2_y == 295)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank2);
+				}
+				else if((blank3_x == 195)&&(blank3_y == 295)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank3);
+				}
+				else if((blank1_x == 45)&&(blank1_y == 295)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank1);
+				}
+				else if((blank2_x == 45)&&(blank2_y == 295)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank2);
+				}
+				else if((blank3_x == 45)&&(blank3_y == 295)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank3);
+				}
+				else if((blank1_x == 195)&&(blank1_y == 95)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank1);
+				}
+				else if((blank2_x == 195)&&(blank2_y == 95)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank2);
+				}
+				else if((blank3_x == 195)&&(blank3_y == 95)) {
+					currentselectedbutton = "red2";		
+					BlankButtonWorking(blank3);
+				}
+			}
+			else if((red1_x == 50)&&(red1_y == 300)) {
+				if((blank1_x == 45)&&(blank1_y == 495)) {
+					currentselectedbutton = "red1";		
+					BlankButtonWorking(blank1);
+				}
+				else if((blank2_x == 45)&&(blank2_y == 495)) {
+					currentselectedbutton = "red1";		
+					BlankButtonWorking(blank2);
+				}
+				else if((blank3_x == 45)&&(blank3_y == 495)) {
+					currentselectedbutton = "red1";		
+					BlankButtonWorking(blank3);
+				}
 			}
 		}
 		else if((reda>0)&&(redb>0)&&(redc>0)) {
@@ -2195,7 +2271,157 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
+			if(isitmatchable == false) {
+				if(blue1_y == blue2_y){
+					if((blank1_y == (blue1_y - 5))||(blank2_y == (blue1_y - 5))||(blank3_y == (blue1_y - 5))) {
+						currentselectedbutton = "red3";		
+						isitmatchable = isMatchable(red3,blue1,blue2,"row");
+						if(isitmatchable == true) {
+							BlankButtonWorking(blankbuttonselection);
+						}
+						else if(isitmatchable == false) {
+							currentselectedbutton = "red2";		
+							isitmatchable = isMatchable(red2,blue1,blue2,"row");
+							if(isitmatchable == true) {
+								BlankButtonWorking(blankbuttonselection);
+							}
+							else if(isitmatchable == false) {
+								currentselectedbutton = "red1";		
+								isitmatchable = isMatchable(red1,blue1,blue2,"row");
+								if(isitmatchable == true) {
+									BlankButtonWorking(blankbuttonselection);
+								}
+							}
+						}
+					}
+				}
+				else if(blue1_y == blue3_y){
+					if((blank1_y == (blue1_y - 5))||(blank2_y == (blue1_y - 5))||(blank3_y == (blue1_y - 5))) {
+						currentselectedbutton = "red3";		
+						isitmatchable = isMatchable(red3,blue1,blue3,"row");
+						if(isitmatchable == true) {
+							BlankButtonWorking(blankbuttonselection);
+						}
+						else if(isitmatchable == false) {
+							currentselectedbutton = "red2";		
+							isitmatchable = isMatchable(red2,blue1,blue3,"row");
+							if(isitmatchable == true) {
+								BlankButtonWorking(blankbuttonselection);
+							}
+							else if(isitmatchable == false) {
+								currentselectedbutton = "red1";		
+								isitmatchable = isMatchable(red1,blue1,blue3,"row");
+								if(isitmatchable == true) {
+									BlankButtonWorking(blankbuttonselection);
+								}
+							}
+						}
+					}
+				}
+				else if(blue2_y == blue3_y){
+					System.out.println("blue2 & blue3 - same row");
+					if((blank1_y == (blue2_y - 5))||(blank2_y == (blue2_y - 5))||(blank3_y == (blue2_y - 5))) {
+						currentselectedbutton = "red1";		
+						isitmatchable = isMatchable(red1,blue2,blue3,"row");
+						if(isitmatchable == true) {
+							BlankButtonWorking(blankbuttonselection);
+						}
+						else if(isitmatchable == false) {
+							currentselectedbutton = "red2";		
+							isitmatchable = isMatchable(red2,blue2,blue3,"row");
+							if(isitmatchable == true) {
+								BlankButtonWorking(blankbuttonselection);
+							}
+							else if(isitmatchable == false) {
+								currentselectedbutton = "red3";		
+								isitmatchable = isMatchable(red3,blue2,blue3,"row");
+								if(isitmatchable == true) {
+									BlankButtonWorking(blankbuttonselection);
+								}
+							}
+						}
+					}
+				}
+			}
+			if(isitmatchable == false) {
+				if(blue1_x == blue2_x){
+					System.out.println("blue1 & blue2 - same column");
+					if((blank1_x == (blue1_x - 5))||(blank2_x == (blue1_x - 5))||(blank3_x == (blue1_x - 5))) {
+						currentselectedbutton = "red3";		
+						isitmatchable = isMatchable(red3,blue1,blue2,"column");
+						if(isitmatchable == true) {
+							BlankButtonWorking(blankbuttonselection);
+						}
+						else if(isitmatchable == false) {
+							currentselectedbutton = "red2";		
+							isitmatchable = isMatchable(red2,blue1,blue2,"column");
+							if(isitmatchable == true) {
+								BlankButtonWorking(blankbuttonselection);
+							}
+							else if(isitmatchable == false) {
+								currentselectedbutton = "red1";		
+								isitmatchable = isMatchable(red1,blue1,blue2,"column");
+								if(isitmatchable == true) {
+									BlankButtonWorking(blankbuttonselection);
+								}	
+							}
+						}
+					}
+				}
+				else if(blue1_x == blue3_x){
+					if((blank1_x == (blue1_x - 5))||(blank2_x == (blue1_x - 5))||(blank3_x == (blue1_x - 5))) {
+						currentselectedbutton = "red3";		
+						isitmatchable = isMatchable(red3,blue1,blue3,"column");
+						if(isitmatchable == true) {
+							BlankButtonWorking(blankbuttonselection);
+						}
+						else if(isitmatchable == false) {
+							currentselectedbutton = "red2";		
+							isitmatchable = isMatchable(red2,blue1,blue3,"column");
+							if(isitmatchable == true) {
+								BlankButtonWorking(blankbuttonselection);
+							}
+							else if(isitmatchable == false) {
+								currentselectedbutton = "red1";		
+								isitmatchable = isMatchable(red1,blue1,blue3,"column");
+								if(isitmatchable == true) {
+									BlankButtonWorking(blankbuttonselection);
+								}
+							}
+						}
+					}
+				}
+				else if(blue2_x == blue3_x){
+					if((blank1_x == (blue2_x - 5))||(blank2_x == (blue2_x - 5))||(blank3_x == (blue2_x - 5))) {
+						currentselectedbutton = "red3";		
+						isitmatchable = isMatchable(red3,blue2,blue3,"column");
+						if(isitmatchable == true) {
+							BlankButtonWorking(blankbuttonselection);
+						}
+						else if(isitmatchable == false) {
+							currentselectedbutton = "red2";		
+							isitmatchable = isMatchable(red2,blue2,blue3,"column");
+							if(isitmatchable == true) {
+								BlankButtonWorking(blankbuttonselection);
+							}
+							else if(isitmatchable == false) {
+								currentselectedbutton = "red1";		
+								isitmatchable = isMatchable(red1,blue2,blue3,"column");
+								if(isitmatchable == true) {
+									BlankButtonWorking(blankbuttonselection);
+								}
+							}
+						}
+					}
+				}
+			}
 		}
+		
+		
+				
+			
+		
+		
 		
 	
 
@@ -2207,44 +2433,102 @@ public class Nira implements ActionListener {
 	if(needmatching == red1) {
 		needmatching_x = red1_x;
 		needmatching_y = red1_y;
+		System.out.println("needmatching = red1 : "+ red1_x+","+red1_y);
 	}
 	else if(needmatching == red2) {
 		needmatching_x = red2_x;
 		needmatching_y = red2_y;
+		System.out.println("needmatching = red2 : "+ red2_x+","+red2_y);
 	}
 	else if(needmatching == red3) {
 		needmatching_x = red3_x;
 		needmatching_y = red3_y;
+		System.out.println("needmatching = red3 : "+ red3_x+","+red3_y);
+	}
+	else if(needmatching == blue1) {
+		needmatching_x = blue1_x;
+		needmatching_y = blue1_y;
+		System.out.println("needmatching = blue1 : "+ blue1_x+","+blue1_y);
+	}
+	else if(needmatching == blue2) {
+		needmatching_x = blue2_x;
+		needmatching_y = blue2_y;
+		System.out.println("needmatching = blue2 : "+ blue2_x+","+blue2_y);
+	}
+	else if(needmatching == blue3) {
+		needmatching_x = blue3_x;
+		needmatching_y = blue3_y;
+		System.out.println("needmatching = blue3 : "+ blue3_x+","+blue3_y);
 	}
 	
 	if(match1 == red1) {
 		match1_x = red1_x;
 		match1_y = red1_y;
+		System.out.println("match1 = red1 : "+ red1_x+","+red1_y);
 	}
 	else if(match1 == red2) {
 		match1_x = red2_x;
 		match1_y = red2_y;
+		System.out.println("match1 = red2 : "+ red2_x+","+red2_y);
 	}
 	else if(match1 == red3) {
 		match1_x = red3_x;
 		match1_y = red3_y;
+		System.out.println("match1 = red3 : "+ red3_x+","+red3_y);
+	}
+	else if(match1 == blue1) {
+		match1_x = blue1_x;
+		match1_y = blue1_y;
+		System.out.println("match1 = blue1 : "+ blue1_x+","+blue1_y);
+	}
+	else if(match1 == blue2) {
+		match1_x = blue2_x;
+		match1_y = blue2_y;
+		System.out.println("match1 = blue2 : "+ blue2_x+","+blue2_y);
+	}
+	else if(match1 == blue3) {
+		match1_x = blue3_x;
+		match1_y = blue3_y;
+		System.out.println("match1 = blue3 : "+ blue3_x+","+blue3_y);
 	}
 	
 	if(match2 == red1) {
 		match2_x = red1_x;
 		match2_y = red1_y;
+		System.out.println("match2 = red1 : "+ red1_x+","+red1_y);
 	}
 	else if(match2 == red2) {
 		match2_x = red2_x;
 		match2_y = red2_y;
+		System.out.println("match2 = red2 : "+ red2_x+","+red2_y);
 	}
 	else if(match2 == red3) {
 		match2_x = red3_x;
 		match2_y = red3_y;
+		System.out.println("match2 = red3 : "+ red3_x+","+red3_y);
+	}
+	else if(match2 == blue1) {
+		match2_x = blue1_x;
+		match2_y = blue1_y;
+		System.out.println("match2 = blue1 : "+ blue1_x+","+blue1_y);
+	}
+	else if(match2 == blue2) {
+		match2_x = blue2_x;
+		match2_y = blue2_y;
+		System.out.println("match2 = blue2 : "+ blue2_x+","+blue2_y);
+	}
+	else if(match2 == blue3) {
+		match2_x = blue3_x;
+		match2_y = blue3_y;
+		System.out.println("match2 = blue3 : "+ blue3_x+","+blue3_y);
 	}
 	
 	
+	
 	if(checkingorder =="row") {
+		System.out.println("row checking entered");
+		
+		
 		if(match1_y == 100) {
 			
 			if(match1_x == 50) {
@@ -2281,7 +2565,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 50) {
+			if(match1_x == 50) {
 				if(match2_x == 350) {
 					if(blank1_y == 95) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -2303,7 +2587,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 200) {
+			if(match1_x == 200) {
 				if(match2_x == 50) {
 					if(blank1_y == 95) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -2337,7 +2621,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 350) {
+			if(match1_x == 350) {
 				if(match2_x == 50) {
 					if(blank1_y == 95) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -2345,13 +2629,13 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank2_y == 95) {
+					else if(blank2_y == 95) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank2);
 							return(true);
 						}
 					}
-					if(blank3_y == 95) {
+					else if(blank3_y == 95) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank3);
 							return(true);
@@ -2359,7 +2643,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 200) {
+			if(match1_x == 200) {
 				if(match2_x == 350) {
 					if(blank1_y == 95) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -2371,7 +2655,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank2_y == 95) {
+					else if(blank2_y == 95) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank2);
 							return(true);
@@ -2381,7 +2665,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank3_y == 95) {
+					else if(blank3_y == 95) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank3);
 							return(true);
@@ -2393,7 +2677,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 350) {
+			if(match1_x == 350) {
 				if(match2_x == 200) {
 					if(blank1_y == 95) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -2403,7 +2687,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank2_y == 95) {
+					else if(blank2_y == 95) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							return(true);
 						}
@@ -2411,7 +2695,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank3_y == 95) {
+					else if(blank3_y == 95) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							return(true);
 						}
@@ -2462,8 +2746,9 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 50) {
+			if(match1_x == 50) {
 				if(match2_x == 350) {
+					System.out.println("gap b/n 50,100 & 350,100");
 					if(blank1_y == 295) {
 						if((needmatching_y == 100)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank1);
@@ -2544,7 +2829,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 200) {
+			if(match1_x == 200) {
 				if(match2_x == 50) {
 					if(blank1_y == 295) {
 						if((needmatching_y == 100)&&(needmatching_x == 350)) {
@@ -2578,7 +2863,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 350) {
+			if(match1_x == 350) {
 				if(match2_x == 50) {
 					if(blank1_y == 295) {
 						if((needmatching_y == 100)&&(needmatching_x == 200)) {
@@ -2606,7 +2891,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank2_y == 295) {
+					else if(blank2_y == 295) {
 						if((needmatching_y == 100)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank2);
 							return(true);
@@ -2632,7 +2917,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank3_y == 295) {
+					else if(blank3_y == 295) {
 						if((needmatching_y == 100)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank3);
 							return(true);
@@ -2660,7 +2945,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 200) {
+			if(match1_x == 200) {
 				if(match2_x == 350) {
 					if(blank1_y == 295) {
 						if((needmatching_y == 100)&&(needmatching_x == 50)) {
@@ -2672,7 +2957,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank2_y == 295) {
+					else if(blank2_y == 295) {
 						if((needmatching_y == 100)&&(needmatching_x == 50)) {
 							blankbuttonselection = (blank2);
 							return(true);
@@ -2682,7 +2967,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank3_y == 295) {
+					else if(blank3_y == 295) {
 						if((needmatching_y == 100)&&(needmatching_x == 50)) {
 							blankbuttonselection = (blank3);
 							return(true);
@@ -2694,7 +2979,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 350) {
+			if(match1_x == 350) {
 				if(match2_x == 200) {
 					if(blank1_y == 295) {
 						if((needmatching_y == 100)&&(needmatching_x == 50)) {
@@ -2706,7 +2991,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank2_y == 295) {
+					else if(blank2_y == 295) {
 						if((needmatching_y == 100)&&(needmatching_x == 50)) {
 							blankbuttonselection = (blank2);
 							return(true);
@@ -2716,7 +3001,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank3_y == 295) {
+					else if(blank3_y == 295) {
 						if((needmatching_y == 100)&&(needmatching_x == 50)) {
 							blankbuttonselection = (blank3);
 							return(true);
@@ -2734,7 +3019,7 @@ public class Nira implements ActionListener {
 		
 		
 		else if(match1_y == 500) {
-			
+			System.out.println("checking last row y=500");
 			if(match1_x == 50) {
 				if(match2_x == 200) {
 					if(blank1_y == 495) {
@@ -2769,8 +3054,9 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 50) {
+			if(match1_x == 50) {
 				if(match2_x == 350) {
+					System.out.println("gap b/n 50,500 & 350,500");
 					if(blank1_y == 495) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank1);
@@ -2791,7 +3077,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 200) {
+			if(match1_x == 200) {
 				if(match2_x == 50) {
 					if(blank1_y == 495) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -2825,21 +3111,22 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 350) {
+			if(match1_x == 350) {
 				if(match2_x == 50) {
+					System.out.println("50,500 & 350,500");
 					if(blank1_y == 495) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank1);
 							return(true);
 						}
 					}
-					if(blank2_y == 495) {
+					else if(blank2_y == 495) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank2);
 							return(true);
 						}
 					}
-					if(blank3_y == 495) {
+					else if(blank3_y == 495) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank3);
 							return(true);
@@ -2847,7 +3134,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 200) {
+			if(match1_x == 200) {
 				if(match2_x == 350) {
 					if(blank1_y == 495) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -2859,7 +3146,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank2_y == 495) {
+					else if(blank2_y == 495) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank2);
 							return(true);
@@ -2869,7 +3156,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank3_y == 495) {
+					else if(blank3_y == 495) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank3);
 							return(true);
@@ -2881,7 +3168,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_x == 350) {
+			if(match1_x == 350) {
 				if(match2_x == 200) {
 					if(blank1_y == 495) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -2893,7 +3180,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank2_y == 495) {
+					else if(blank2_y == 495) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank2);
 							return(true);
@@ -2903,7 +3190,7 @@ public class Nira implements ActionListener {
 							return(true);
 						}
 					}
-					if(blank3_y == 495) {
+					else if(blank3_y == 495) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
 							blankbuttonselection = (blank3);
 							return(true);
@@ -2923,6 +3210,8 @@ public class Nira implements ActionListener {
 		
 	}
 	else if(checkingorder == "column") {
+		System.out.println("column checking entered");
+		
 		if(match2_x == 50) {
 			
 			if(match1_y == 100) {
@@ -2959,7 +3248,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 100) {
+			if(match1_y == 100) {
 				if(match2_y == 500) {
 					if(blank1_x == 45) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -2981,7 +3270,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 300) {
+			if(match1_y == 300) {
 				if(match2_y == 100) {
 					if(blank1_x == 45) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -3015,7 +3304,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 500) {
+			if(match1_y == 500) {
 				if(match2_y == 100) {
 					if(blank1_x == 45) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -3037,7 +3326,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 300) {
+			if(match1_y == 300) {
 				if(match2_y == 500) {
 					if(blank1_x == 45) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -3071,7 +3360,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 500) {
+			if(match1_y == 500) {
 				if(match2_y == 300) {
 					if(blank1_x == 45) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -3109,7 +3398,7 @@ public class Nira implements ActionListener {
 			
 			
 		}
-		else if(match2_x == 200) {
+		if(match2_x == 200) {
 			
 			if(match1_y == 100) {
 				if(match2_y == 300) {
@@ -3145,7 +3434,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 100) {
+			if(match1_y == 100) {
 				if(match2_y == 500) {
 					if(blank1_x == 195) {
 						if((needmatching_y == 100)&&(needmatching_x == 50)) {
@@ -3227,7 +3516,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 300) {
+			if(match1_y == 300) {
 				if(match2_y == 100) {
 					if(blank1_x == 195) {
 						if((needmatching_y == 500)&&(needmatching_x == 350)) {
@@ -3261,7 +3550,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 500) {
+			if(match1_y == 500) {
 				if(match2_y == 100) {
 					if(blank1_x == 195) {
 						if((needmatching_y == 100)&&(needmatching_x == 50)) {
@@ -3343,7 +3632,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 300) {
+			if(match1_y == 300) {
 				if(match2_y == 500) {
 					if(blank1_x == 195) {
 						if((needmatching_y == 100)&&(needmatching_x == 350)) {
@@ -3377,7 +3666,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 500) {
+			if(match1_y == 500) {
 				if(match2_y == 300) {
 					if(blank1_x == 195) {
 						if((needmatching_y == 100)&&(needmatching_x == 350)) {
@@ -3452,7 +3741,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 100) {
+			if(match1_y == 100) {
 				if(match2_y == 500) {
 					if(blank1_x == 345) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -3474,7 +3763,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 300) {
+			if(match1_y == 300) {
 				if(match2_y == 100) {
 					if(blank1_x == 345) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -3508,7 +3797,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 500) {
+			if(match1_y == 500) {
 				if(match2_y == 100) {
 					if(blank1_x == 345) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -3530,7 +3819,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 300) {
+			if(match1_y == 300) {
 				if(match2_y == 500) {
 					if(blank1_x == 345) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -3564,7 +3853,7 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
-			else if(match1_y == 500) {
+			if(match1_y == 500) {
 				if(match2_y == 300) {
 					if(blank1_x == 345) {
 						if((needmatching_y == 300)&&(needmatching_x == 200)) {
@@ -3600,11 +3889,7 @@ public class Nira implements ActionListener {
 			}
 			
 			
-			
 		}
-		
-		
-		
 		
 		
 	}
