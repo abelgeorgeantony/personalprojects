@@ -2218,54 +2218,84 @@ public class Nira implements ActionListener {
 		}
 		else if((reda>0)&&(redb>0)&&(redc>0)) {
 			if(red1_y == red2_y){
-				if((blank1_y == (red1_y - 5))||(blank2_y == (red1_y - 5))||(blank3_y == (red1_y - 5))) {
 					currentselectedbutton = "red3";		
 					isitmatchable = isMatchable(red3,red1,red2,"row");
 					if(isitmatchable == true) {
 						BlankButtonWorking(blankbuttonselection);
 					}
-				}
 			}
 			else if(red1_y == red3_y){
-				if((blank1_y == (red1_y - 5))||(blank2_y == (red1_y - 5))||(blank3_y == (red1_y - 5))) {
 					currentselectedbutton = "red2";		
 					isitmatchable = isMatchable(red2,red1,red3,"row");
 					if(isitmatchable == true) {
 						BlankButtonWorking(blankbuttonselection);
 					}
-				}
 			}
 			else if(red2_y == red3_y){
-				if((blank1_y == (red2_y - 5))||(blank2_y == (red2_y - 5))||(blank3_y == (red2_y - 5))) {
 					currentselectedbutton = "red1";		
 					isitmatchable = isMatchable(red1,red2,red3,"row");
 					if(isitmatchable == true) {
 						BlankButtonWorking(blankbuttonselection);
 					}
-				}
 			}
 			else if(red1_x == red2_x){
-				if((blank1_x == (red1_x - 5))||(blank2_x == (red1_x - 5))||(blank3_x == (red1_x - 5))) {
 					currentselectedbutton = "red3";		
 					isitmatchable = isMatchable(red3,red1,red2,"column");
 					if(isitmatchable == true) {
 						BlankButtonWorking(blankbuttonselection);
 					}
-				}
 			}
 			else if(red1_x == red3_x){
-				if((blank1_x == (red1_x - 5))||(blank2_x == (red1_x - 5))||(blank3_x == (red1_x - 5))) {
 					currentselectedbutton = "red2";		
 					isitmatchable = isMatchable(red2,red1,red3,"column");
 					if(isitmatchable == true) {
 						BlankButtonWorking(blankbuttonselection);
 					}
-				}
 			}
 			else if(red2_x == red3_x){
-				if((blank1_x == (red2_x - 5))||(blank2_x == (red2_x - 5))||(blank3_x == (red2_x - 5))) {
 					currentselectedbutton = "red1";		
 					isitmatchable = isMatchable(red1,red2,red3,"column");
+					if(isitmatchable == true) {
+						BlankButtonWorking(blankbuttonselection);
+					}
+			}
+			if(isitmatchable == false) {
+				currentselectedbutton = "red1";		
+				isitmatchable = isMatchable(red1,red2,red3,"maindiag");
+				if(isitmatchable == true) {
+					BlankButtonWorking(blankbuttonselection);
+				}
+				else if(isitmatchable == false) {
+					currentselectedbutton = "red2";		
+					isitmatchable = isMatchable(red2,red1,red3,"maindiag");
+					if(isitmatchable == true) {
+						BlankButtonWorking(blankbuttonselection);
+					}
+				}
+				else if(isitmatchable == false) {
+					currentselectedbutton = "red3";		
+					isitmatchable = isMatchable(red3,red1,red2,"maindiag");
+					if(isitmatchable == true) {
+						BlankButtonWorking(blankbuttonselection);
+					}
+				}
+			}
+			if(isitmatchable == false) {
+				currentselectedbutton = "red1";		
+				isitmatchable = isMatchable(red1,red2,red3,"offdiag");
+				if(isitmatchable == true) {
+					BlankButtonWorking(blankbuttonselection);
+				}
+				else if(isitmatchable == false) {
+					currentselectedbutton = "red2";		
+					isitmatchable = isMatchable(red2,red1,red3,"offdiag");
+					if(isitmatchable == true) {
+						BlankButtonWorking(blankbuttonselection);
+					}
+				}
+				else if(isitmatchable == false) {
+					currentselectedbutton = "red3";		
+					isitmatchable = isMatchable(red3,red1,red2,"offdiag");
 					if(isitmatchable == true) {
 						BlankButtonWorking(blankbuttonselection);
 					}
@@ -2428,1473 +2458,1720 @@ public class Nira implements ActionListener {
 	}
 	
 	public boolean isMatchable(JButton needmatching, JButton match1, JButton match2, String checkingorder) {
-	int needmatching_x = 0,needmatching_y=0,match1_x=0,match1_y=0,match2_x=0,match2_y=0;	
-	System.out.println("isMatchable function reached");
-	if(needmatching == red1) {
-		needmatching_x = red1_x;
-		needmatching_y = red1_y;
-		System.out.println("needmatching = red1 : "+ red1_x+","+red1_y);
-	}
-	else if(needmatching == red2) {
-		needmatching_x = red2_x;
-		needmatching_y = red2_y;
-		System.out.println("needmatching = red2 : "+ red2_x+","+red2_y);
-	}
-	else if(needmatching == red3) {
-		needmatching_x = red3_x;
-		needmatching_y = red3_y;
-		System.out.println("needmatching = red3 : "+ red3_x+","+red3_y);
-	}
-	else if(needmatching == blue1) {
-		needmatching_x = blue1_x;
-		needmatching_y = blue1_y;
-		System.out.println("needmatching = blue1 : "+ blue1_x+","+blue1_y);
-	}
-	else if(needmatching == blue2) {
-		needmatching_x = blue2_x;
-		needmatching_y = blue2_y;
-		System.out.println("needmatching = blue2 : "+ blue2_x+","+blue2_y);
-	}
-	else if(needmatching == blue3) {
-		needmatching_x = blue3_x;
-		needmatching_y = blue3_y;
-		System.out.println("needmatching = blue3 : "+ blue3_x+","+blue3_y);
-	}
-	
-	if(match1 == red1) {
-		match1_x = red1_x;
-		match1_y = red1_y;
-		System.out.println("match1 = red1 : "+ red1_x+","+red1_y);
-	}
-	else if(match1 == red2) {
-		match1_x = red2_x;
-		match1_y = red2_y;
-		System.out.println("match1 = red2 : "+ red2_x+","+red2_y);
-	}
-	else if(match1 == red3) {
-		match1_x = red3_x;
-		match1_y = red3_y;
-		System.out.println("match1 = red3 : "+ red3_x+","+red3_y);
-	}
-	else if(match1 == blue1) {
-		match1_x = blue1_x;
-		match1_y = blue1_y;
-		System.out.println("match1 = blue1 : "+ blue1_x+","+blue1_y);
-	}
-	else if(match1 == blue2) {
-		match1_x = blue2_x;
-		match1_y = blue2_y;
-		System.out.println("match1 = blue2 : "+ blue2_x+","+blue2_y);
-	}
-	else if(match1 == blue3) {
-		match1_x = blue3_x;
-		match1_y = blue3_y;
-		System.out.println("match1 = blue3 : "+ blue3_x+","+blue3_y);
-	}
-	
-	if(match2 == red1) {
-		match2_x = red1_x;
-		match2_y = red1_y;
-		System.out.println("match2 = red1 : "+ red1_x+","+red1_y);
-	}
-	else if(match2 == red2) {
-		match2_x = red2_x;
-		match2_y = red2_y;
-		System.out.println("match2 = red2 : "+ red2_x+","+red2_y);
-	}
-	else if(match2 == red3) {
-		match2_x = red3_x;
-		match2_y = red3_y;
-		System.out.println("match2 = red3 : "+ red3_x+","+red3_y);
-	}
-	else if(match2 == blue1) {
-		match2_x = blue1_x;
-		match2_y = blue1_y;
-		System.out.println("match2 = blue1 : "+ blue1_x+","+blue1_y);
-	}
-	else if(match2 == blue2) {
-		match2_x = blue2_x;
-		match2_y = blue2_y;
-		System.out.println("match2 = blue2 : "+ blue2_x+","+blue2_y);
-	}
-	else if(match2 == blue3) {
-		match2_x = blue3_x;
-		match2_y = blue3_y;
-		System.out.println("match2 = blue3 : "+ blue3_x+","+blue3_y);
-	}
-	
-	
-	
-	if(checkingorder =="row") {
-		System.out.println("row checking entered");
-		
-		
-		if(match1_y == 100) {
-			
-			if(match1_x == 50) {
-				if(match2_x == 200) {
-					if(blank1_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 50) {
-				if(match2_x == 350) {
-					if(blank1_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 200) {
-				if(match2_x == 50) {
-					if(blank1_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 350) {
-				if(match2_x == 50) {
-					if(blank1_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 200) {
-				if(match2_x == 350) {
-					if(blank1_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 350) {
-				if(match2_x == 200) {
-					if(blank1_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							return(true);
-						}
-					}
-					else if(blank2_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							return(true);
-						}
-					}
-					else if(blank3_y == 95) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							return(true);
-						}
-					}
-				}
-			}
-			
-		
+		int needmatching_x = 0, needmatching_y = 0, match1_x = 0, match1_y = 0, match2_x = 0, match2_y = 0;
+		System.out.println("\n");
+		System.out.println("isMatchable function reached ");
+		System.out.println("checking order :" + checkingorder);
+		if (needmatching == red1) {
+			needmatching_x = red1_x;
+			needmatching_y = red1_y;
+			System.out.println("needmatching = red1 : " + red1_x + "," + red1_y);
+		} else if (needmatching == red2) {
+			needmatching_x = red2_x;
+			needmatching_y = red2_y;
+			System.out.println("needmatching = red2 : " + red2_x + "," + red2_y);
+		} else if (needmatching == red3) {
+			needmatching_x = red3_x;
+			needmatching_y = red3_y;
+			System.out.println("needmatching = red3 : " + red3_x + "," + red3_y);
+		} else if (needmatching == blue1) {
+			needmatching_x = blue1_x;
+			needmatching_y = blue1_y;
+			System.out.println("needmatching = blue1 : " + blue1_x + "," + blue1_y);
+		} else if (needmatching == blue2) {
+			needmatching_x = blue2_x;
+			needmatching_y = blue2_y;
+			System.out.println("needmatching = blue2 : " + blue2_x + "," + blue2_y);
+		} else if (needmatching == blue3) {
+			needmatching_x = blue3_x;
+			needmatching_y = blue3_y;
+			System.out.println("needmatching = blue3 : " + blue3_x + "," + blue3_y);
 		}
-		
-		
-		else if(match1_y == 300) {
-			
-			if(match1_x == 50) {
-				if(match2_x == 200) {
-					if(blank1_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 50) {
-				if(match2_x == 350) {
-					System.out.println("gap b/n 50,100 & 350,100");
-					if(blank1_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 200) {
-				if(match2_x == 50) {
-					if(blank1_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 350) {
-				if(match2_x == 50) {
-					if(blank1_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 200) {
-				if(match2_x == 350) {
-					if(blank1_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 350) {
-				if(match2_x == 200) {
-					if(blank1_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 295) {
-						if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			
-		
+
+		if (match1 == red1) {
+			match1_x = red1_x;
+			match1_y = red1_y;
+			System.out.println("match1 = red1 : " + red1_x + "," + red1_y);
+		} else if (match1 == red2) {
+			match1_x = red2_x;
+			match1_y = red2_y;
+			System.out.println("match1 = red2 : " + red2_x + "," + red2_y);
+		} else if (match1 == red3) {
+			match1_x = red3_x;
+			match1_y = red3_y;
+			System.out.println("match1 = red3 : " + red3_x + "," + red3_y);
+		} else if (match1 == blue1) {
+			match1_x = blue1_x;
+			match1_y = blue1_y;
+			System.out.println("match1 = blue1 : " + blue1_x + "," + blue1_y);
+		} else if (match1 == blue2) {
+			match1_x = blue2_x;
+			match1_y = blue2_y;
+			System.out.println("match1 = blue2 : " + blue2_x + "," + blue2_y);
+		} else if (match1 == blue3) {
+			match1_x = blue3_x;
+			match1_y = blue3_y;
+			System.out.println("match1 = blue3 : " + blue3_x + "," + blue3_y);
 		}
-		
-		
-		else if(match1_y == 500) {
-			System.out.println("checking last row y=500");
-			if(match1_x == 50) {
-				if(match2_x == 200) {
-					if(blank1_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 50) {
-				if(match2_x == 350) {
-					System.out.println("gap b/n 50,500 & 350,500");
-					if(blank1_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 200) {
-				if(match2_x == 50) {
-					if(blank1_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 350) {
-				if(match2_x == 50) {
-					System.out.println("50,500 & 350,500");
-					if(blank1_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 200) {
-				if(match2_x == 350) {
-					if(blank1_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_x == 350) {
-				if(match2_x == 200) {
-					if(blank1_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_y == 495) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			
-		
+
+		if (match2 == red1) {
+			match2_x = red1_x;
+			match2_y = red1_y;
+			System.out.println("match2 = red1 : " + red1_x + "," + red1_y);
+		} else if (match2 == red2) {
+			match2_x = red2_x;
+			match2_y = red2_y;
+			System.out.println("match2 = red2 : " + red2_x + "," + red2_y);
+		} else if (match2 == red3) {
+			match2_x = red3_x;
+			match2_y = red3_y;
+			System.out.println("match2 = red3 : " + red3_x + "," + red3_y);
+		} else if (match2 == blue1) {
+			match2_x = blue1_x;
+			match2_y = blue1_y;
+			System.out.println("match2 = blue1 : " + blue1_x + "," + blue1_y);
+		} else if (match2 == blue2) {
+			match2_x = blue2_x;
+			match2_y = blue2_y;
+			System.out.println("match2 = blue2 : " + blue2_x + "," + blue2_y);
+		} else if (match2 == blue3) {
+			match2_x = blue3_x;
+			match2_y = blue3_y;
+			System.out.println("match2 = blue3 : " + blue3_x + "," + blue3_y);
 		}
-		
-		
-		
-	}
-	else if(checkingorder == "column") {
-		System.out.println("column checking entered");
-		
-		if(match2_x == 50) {
-			
-			if(match1_y == 100) {
-				if(match2_y == 300) {
-					if(blank1_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
+
+		if (checkingorder == "row") {
+			System.out.println("row checking entered");
+
+			if (match1_y == 100) {
+
+				if (match1_x == 50) {
+					if (match2_x == 200) {
+						if (blank1_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
 						}
 					}
-					else if(blank2_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
+				}
+				if (match1_x == 50) {
+					if (match2_x == 350) {
+						if (blank1_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
 						}
 					}
-					else if(blank3_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
+				}
+				if (match1_x == 200) {
+					if (match2_x == 50) {
+						if (blank1_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
 						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
+					}
+				}
+				if (match1_x == 350) {
+					if (match2_x == 50) {
+						if (blank1_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_x == 200) {
+					if (match2_x == 350) {
+						if (blank1_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_x == 350) {
+					if (match2_x == 200) {
+						if (blank1_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								return (true);
+							}
+						} else if (blank2_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								return (true);
+							}
+						} else if (blank3_y == 95) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								return (true);
+							}
+						}
+					}
+				}
+
+			}
+
+			else if (match1_y == 300) {
+
+				if (match1_x == 50) {
+					if (match2_x == 200) {
+						if (blank1_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_x == 50) {
+					if (match2_x == 350) {
+						System.out.println("gap b/n 50,100 & 350,100");
+						if (blank1_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_x == 200) {
+					if (match2_x == 50) {
+						if (blank1_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_x == 350) {
+					if (match2_x == 50) {
+						if (blank1_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_x == 200) {
+					if (match2_x == 350) {
+						if (blank1_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_x == 350) {
+					if (match2_x == 200) {
+						if (blank1_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 295) {
+							if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+
+			}
+
+			else if (match1_y == 500) {
+				System.out.println("checking last row y=500");
+				if (match1_x == 50) {
+					if (match2_x == 200) {
+						if (blank1_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_x == 50) {
+					if (match2_x == 350) {
+						System.out.println("gap b/n 50,500 & 350,500");
+						if (blank1_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_x == 200) {
+					if (match2_x == 50) {
+						if (blank1_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_x == 350) {
+					if (match2_x == 50) {
+						System.out.println("50,500 & 350,500");
+						if (blank1_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_x == 200) {
+					if (match2_x == 350) {
+						if (blank1_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_x == 350) {
+					if (match2_x == 200) {
+						if (blank1_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_y == 495) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+
+			}
+
+		} else if (checkingorder == "column") {
+			System.out.println("column checking entered");
+
+			if (match2_x == 50) {
+
+				if (match1_y == 100) {
+					if (match2_y == 300) {
+						if (blank1_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 100) {
+					if (match2_y == 500) {
+						if (blank1_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 300) {
+					if (match2_y == 100) {
+						if (blank1_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 500) {
+					if (match2_y == 100) {
+						if (blank1_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 300) {
+					if (match2_y == 500) {
+						if (blank1_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 500) {
+					if (match2_y == 300) {
+						if (blank1_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 45) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+
+			}
+			if (match2_x == 200) {
+
+				if (match1_y == 100) {
+					if (match2_y == 300) {
+						if (blank1_x == 195) {
+							if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 195) {
+							if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 195) {
+							if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 100) {
+					if (match2_y == 500) {
+						if (blank1_x == 195) {
+							if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 195) {
+							if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 195) {
+							if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 300) {
+					if (match2_y == 100) {
+						if (blank1_x == 195) {
+							if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 195) {
+							if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 195) {
+							if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 500) {
+					if (match2_y == 100) {
+						if (blank1_x == 195) {
+							if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 195) {
+							if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 195) {
+							if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 300) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 300) {
+					if (match2_y == 500) {
+						if (blank1_x == 195) {
+							if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 195) {
+							if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 195) {
+							if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 500) {
+					if (match2_y == 300) {
+						if (blank1_x == 195) {
+							if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 195) {
+							if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 195) {
+							if ((needmatching_y == 100) && (needmatching_x == 350)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 50)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+
+			}
+
+			else if (match2_x == 350) {
+
+				if (match1_y == 100) {
+					if (match2_y == 300) {
+						if (blank1_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 100) {
+					if (match2_y == 500) {
+						if (blank1_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 300) {
+					if (match2_y == 100) {
+						if (blank1_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 500) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 500) {
+					if (match2_y == 100) {
+						if (blank1_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 300) {
+					if (match2_y == 500) {
+						if (blank1_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+				if (match1_y == 500) {
+					if (match2_y == 300) {
+						if (blank1_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank1);
+								return (true);
+							}
+						} else if (blank2_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank2);
+								return (true);
+							}
+						} else if (blank3_x == 345) {
+							if ((needmatching_y == 300) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							} else if ((needmatching_y == 100) && (needmatching_x == 200)) {
+								blankbuttonselection = (blank3);
+								return (true);
+							}
+						}
+					}
+				}
+
+			}
+
+		} else if (checkingorder == "maindiag") {
+
+			if ((match1_x == 50) && (match1_y == 100)) {
+
+				if ((match2_x == 200) && (match2_y == 300)) {
+					if ((blank1_x == 345) && (blank1_y == 495)) {
+						if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						}
+					} else if ((blank2_x == 345) && (blank2_y == 495)) {
+						if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						}
+					} else if ((blank3_x == 345) && (blank3_y == 495)) {
+						if ((needmatching_x == 200) && (needmatching_y == 500)) {
 							blankbuttonselection = (blank3);
-							return(true);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						}
+					}
+				} else if ((match2_x == 350) && (match2_y == 500)) {
+					if ((blank1_x == 195) && (blank1_y == 295)) {
+						if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						}
+					} else if ((blank2_x == 195) && (blank2_y == 295)) {
+						if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						}
+					} else if ((blank3_x == 195) && (blank3_y == 295)) {
+						if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						}
+					}
+				}
+			} else if ((match1_x == 200) && (match1_y == 300)) {
+
+				if ((match2_x == 50) && (match2_y == 100)) {
+					if ((blank1_x == 345) && (blank1_y == 495)) {
+						if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						}
+					} else if ((blank2_x == 345) && (blank2_y == 495)) {
+						if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						}
+					} else if ((blank3_x == 345) && (blank3_y == 495)) {
+						if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						}
+					}
+				} else if ((match2_x == 350) && (match2_y == 500)) {
+					if ((blank1_x == 45) && (blank1_y == 95)) {
+						if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						}
+					} else if ((blank2_x == 45) && (blank2_y == 95)) {
+						if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						}
+					} else if ((blank3_x == 45) && (blank3_y == 95)) {
+						if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						}
+					}
+				}
+			} else if ((match1_x == 350) && (match1_y == 500)) {
+				if ((match2_x == 200) && (match2_y == 300)) {
+					if ((blank1_x == 45) && (blank1_y == 95)) {
+						if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						}
+					} else if ((blank2_x == 45) && (blank2_y == 95)) {
+						if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						}
+					} else if ((blank3_x == 45) && (blank3_y == 95)) {
+						if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						}
+					}
+				} else if ((match2_x == 50) && (match2_y == 100)) {
+					if ((blank1_x == 195) && (blank1_y == 295)) {
+						if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						}
+					} else if ((blank2_x == 195) && (blank2_y == 295)) {
+						if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						}
+					} else if ((blank3_x == 195) && (blank3_y == 295)) {
+						if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank3);
+							return (true);
 						}
 					}
 				}
 			}
-			if(match1_y == 100) {
-				if(match2_y == 500) {
-					if(blank1_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+
+		} else if (checkingorder == "offdiag") {
+			System.out.println("offdiag checking entered");
+
+			if ((match1_x == 350) && (match1_y == 100)) {
+
+				if ((match2_x == 200) && (match2_y == 300)) {
+					if ((blank1_x == 45) && (blank1_y == 495)) {
+						if ((needmatching_x == 50) && (needmatching_y == 300)) {
 							blankbuttonselection = (blank1);
-							return(true);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank1);
+							return (true);
 						}
-					}
-					else if(blank2_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+					} else if ((blank2_x == 45) && (blank2_y == 495)) {
+						if ((needmatching_x == 50) && (needmatching_y == 300)) {
 							blankbuttonselection = (blank2);
-							return(true);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						}
+					} else if ((blank3_x == 45) && (blank3_y == 495)) {
+						if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank3);
+							return (true);
 						}
 					}
-					else if(blank3_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
+				} else if ((match2_x == 50) && (match2_y == 500)) {
+					if ((blank1_x == 195) && (blank1_y == 295)) {
+						if ((needmatching_x == 50) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						}
+					} else if ((blank2_x == 195) && (blank2_y == 295)) {
+						if ((needmatching_x == 50) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						}
+					} else if ((blank3_x == 195) && (blank3_y == 295)) {
+						if ((needmatching_x == 50) && (needmatching_y == 100)) {
 							blankbuttonselection = (blank3);
-							return(true);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						}
+					}
+				}
+			} else if ((match1_x == 200) && (match1_y == 300)) {
+
+				if ((match2_x == 350) & (match2_y == 100)) {
+					if ((blank1_x == 50) && (blank1_y == 500)) {
+						if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						}
+					} else if ((blank2_x == 50) && (blank2_y == 500)) {
+						if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						}
+					} else if ((blank3_x == 50) && (blank3_y == 500)) {
+						if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						}
+					}
+				} else if ((match2_x == 50) & (match2_y == 500)) {
+					if ((blank1_x == 350) && (blank1_y == 100)) {
+						if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						}
+					} else if ((blank2_x == 350) && (blank2_y == 100)) {
+						if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						}
+					} else if ((blank3_x == 350) && (blank3_y == 100)) {
+						if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						}
+					}
+				}
+			} else if ((match1_x == 50) && (match1_y == 500)) {
+
+				if ((match2_x == 200) && (match2_y == 300)) {
+					if ((blank1_x == 350) && (blank1_y == 100)) {
+						if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						}
+					} else if ((blank2_x == 350) && (blank2_y == 100)) {
+						if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						}
+					} else if ((blank3_x == 350) && (blank3_y == 100)) {
+						if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						}
+					}
+				} else if ((match2_x == 350) && (match2_y == 100)) {
+					if ((blank1_x == 200) && (blank1_y == 300)) {
+						if ((needmatching_x == 50) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank1);
+							return (true);
+						}
+					} else if ((blank2_x == 200) && (blank2_y == 300)) {
+						if ((needmatching_x == 50) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank2);
+							return (true);
+						}
+					} else if ((blank3_x == 200) && (blank3_y == 300)) {
+						if ((needmatching_x == 50) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 100)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 50) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 300)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 200) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank3);
+							return (true);
+						} else if ((needmatching_x == 350) && (needmatching_y == 500)) {
+							blankbuttonselection = (blank3);
+							return (true);
 						}
 					}
 				}
 			}
-			if(match1_y == 300) {
-				if(match2_y == 100) {
-					if(blank1_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 500) {
-				if(match2_y == 100) {
-					if(blank1_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 300) {
-				if(match2_y == 500) {
-					if(blank1_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 500) {
-				if(match2_y == 300) {
-					if(blank1_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 45) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			
-			
-			
 		}
-		if(match2_x == 200) {
-			
-			if(match1_y == 100) {
-				if(match2_y == 300) {
-					if(blank1_x ==195) {
-						if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 195) {
-						if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 195) {
-						if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 100) {
-				if(match2_y == 500) {
-					if(blank1_x == 195) {
-						if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 195) {
-						if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 195) {
-						if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 300) {
-				if(match2_y == 100) {
-					if(blank1_x == 195) {
-						if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 195) {
-						if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 195) {
-						if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 500) {
-				if(match2_y == 100) {
-					if(blank1_x == 195) {
-						if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 195) {
-						if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 195) {
-						if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 300)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 300) {
-				if(match2_y == 500) {
-					if(blank1_x == 195) {
-						if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 195) {
-						if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 195) {
-						if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 500) {
-				if(match2_y == 300) {
-					if(blank1_x == 195) {
-						if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 195) {
-						if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 195) {
-						if((needmatching_y == 100)&&(needmatching_x == 350)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 50)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			
-			
-			
-		}
-		
-		else if(match2_x == 350) {
-			
-			if(match1_y == 100) {
-				if(match2_y == 300) {
-					if(blank1_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 100) {
-				if(match2_y == 500) {
-					if(blank1_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 300) {
-				if(match2_y == 100) {
-					if(blank1_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 500)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 500) {
-				if(match2_y == 100) {
-					if(blank1_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 300) {
-				if(match2_y == 500) {
-					if(blank1_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			if(match1_y == 500) {
-				if(match2_y == 300) {
-					if(blank1_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank1);
-							return(true);
-						}
-					}
-					else if(blank2_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank2);
-							return(true);
-						}
-					}
-					else if(blank3_x == 345) {
-						if((needmatching_y == 300)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-						else if((needmatching_y == 100)&&(needmatching_x == 200)) {
-							blankbuttonselection = (blank3);
-							return(true);
-						}
-					}
-				}
-			}
-			
-			
-		}
-		
-		
-	}
-	
-	return(false);
+
+		return (false);
 	}
 	
 	
