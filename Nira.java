@@ -17,9 +17,10 @@ public class Nira implements ActionListener {
 	String colorlock="Green";
 	int red1_x,red1_y,red2_x,red2_y,red3_x,red3_y,blank1_x,blank1_y,blank2_x,blank2_y,blank3_x,blank3_y,blue1_x,blue1_y,blue2_x,blue2_y,blue3_x,blue3_y;
 	boolean b1 = false,b2 = false,b3 = false,redNIRA = false, blueNIRA = false,playername = false,botness = false,botmode = false,isitmatchable = false;
+	boolean notmatchable = false,blankenabled = false,use2ndmove = false;
 	String currentselectedbutton = "null",player="red";
 	int templocvalue_x,templocvalue_y,temporarybuttonvalue_x,temporarybuttonvalue_y,temporaryblankvalue_x,temporaryblankvalue_y;
-	int reda=0,redb=0,redc=0,bluea=0,blueb=0,bluec=0;
+	int reda=0,redb=0,redc=0,bluea=0,blueb=0,bluec=0,randomness=0;
 	JButton Startingplayerbutton,Startingbotbutton;
 	JLabel moves1,moves2,playerr1,playerr2,linela;
 	JButton line1,line2,line3,line4,line5,line6,line7,line8,line9,line10,line11,line12;
@@ -27,7 +28,7 @@ public class Nira implements ActionListener {
 	JButton blo1,blo2,blo3,blo4,blo5,blo6,blo7,blo8,blo9,blo10,blo11,blo12,blo13,blo14,blo15;
 	JButton bloc1,bloc2,bloc3,bloc4,bloc5,bloc6,bloc7,bloc8,bloc9,bloc10,bloc11,bloc12,bloc13,bloc14,bloc15;
 	JButton block1,block2,block3,block4,block5,block6,block7,block8,block9,block10,block11,block12,block13,block14,block15;
-	JButton blankbuttonselection;
+	JButton blankbuttonselection,blankbuttonselection2;
 	
 	
 	
@@ -976,6 +977,7 @@ public class Nira implements ActionListener {
         		red1.setBounds(red1_x, red1_y, 50, 50);
 				blank1.setBounds(blank1_x, blank1_y, 60, 60);
         		reda++;
+        		System.out.println("red1 to blank1");
         	}
         	
         	else if(currentselectedbutton == "red2") {
@@ -988,6 +990,7 @@ public class Nira implements ActionListener {
         		red2.setBounds(red2_x, red2_y, 50, 50);
 				blank1.setBounds(blank1_x, blank1_y, 60, 60);
         		redb++;
+        		System.out.println("red2 to blank1");
         	}
         	
         	else if(currentselectedbutton == "red3") {
@@ -1000,6 +1003,7 @@ public class Nira implements ActionListener {
         		red3.setBounds(red3_x, red3_y, 50, 50);
 				blank1.setBounds(blank1_x, blank1_y, 60, 60);
         		redc++;
+        		System.out.println("red3 to blank1");
         	}
         	
         	else if(currentselectedbutton == "blue1") {
@@ -1012,6 +1016,7 @@ public class Nira implements ActionListener {
         		blue1.setBounds(blue1_x, blue1_y, 50, 50);
 				blank1.setBounds(blank1_x, blank1_y, 60, 60);
         		bluea++;
+        		System.out.println("blue1 to blank1");
         	}
         	
         	else if(currentselectedbutton == "blue2") {
@@ -1024,6 +1029,7 @@ public class Nira implements ActionListener {
         		blue2.setBounds(blue2_x, blue2_y, 50, 50);
 				blank1.setBounds(blank1_x, blank1_y, 60, 60);
         		blueb++;
+        		System.out.println("blue2 to blank1");
         	}
         	
         	else if(currentselectedbutton == "blue3"){
@@ -1036,6 +1042,7 @@ public class Nira implements ActionListener {
         		blue3.setBounds(blue3_x, blue3_y, 50, 50);
 				blank1.setBounds(blank1_x, blank1_y, 60, 60);
         		bluec++;
+        		System.out.println("blue3 to blank1");
         	}
 			}
         	
@@ -1051,6 +1058,7 @@ public class Nira implements ActionListener {
 	        		red1.setBounds(red1_x, red1_y, 50, 50);
 					blank2.setBounds(blank2_x, blank2_y, 60, 60);
 	        		reda++;
+	        		System.out.println("red1 to blank2");
 	        	}
 	        	
 	        	else if(currentselectedbutton == "red2") {
@@ -1063,6 +1071,7 @@ public class Nira implements ActionListener {
 	        		red2.setBounds(red2_x, red2_y, 50, 50);
 					blank2.setBounds(blank2_x, blank2_y, 60, 60);
 	        		redb++;
+	        		System.out.println("red2 to blank2");
 	        	}
 	        	
 	        	else if(currentselectedbutton == "red3") {
@@ -1075,6 +1084,7 @@ public class Nira implements ActionListener {
 	        		red3.setBounds(red3_x, red3_y, 50, 50);
 					blank2.setBounds(blank2_x, blank2_y, 60, 60);
 	        		redc++;
+	        		System.out.println("red3 to blank2");
 	        	}
 	        	
 	        	else if(currentselectedbutton == "blue1") {
@@ -1087,6 +1097,7 @@ public class Nira implements ActionListener {
 	        		blue1.setBounds(blue1_x, blue1_y, 50, 50);
 					blank2.setBounds(blank2_x, blank2_y, 60, 60);
 	        		bluea++;
+	        		System.out.println("blue1 to blank2");
 	        	}
 	        	
 	        	else if(currentselectedbutton == "blue2") {
@@ -1099,6 +1110,7 @@ public class Nira implements ActionListener {
 	        		blue2.setBounds(blue2_x, blue2_y, 50, 50);
 					blank2.setBounds(blank2_x, blank2_y, 60, 60);
 	        		blueb++;
+	        		System.out.println("blue2 to blank2");
 	        	}
 	        	
 	        	else if(currentselectedbutton == "blue3"){
@@ -1111,6 +1123,7 @@ public class Nira implements ActionListener {
 	        		blue3.setBounds(blue3_x, blue3_y, 50, 50);
 					blank2.setBounds(blank2_x, blank2_y, 60, 60);
 	        		bluec++;
+	        		System.out.println("blue3 to blank2");
 	        	}
 				}
 			
@@ -1126,6 +1139,7 @@ public class Nira implements ActionListener {
 	        		red1.setBounds(red1_x, red1_y, 50, 50);
 					blank3.setBounds(blank3_x, blank3_y, 60, 60);
 	        		reda++;
+	        		System.out.println("red1 to blank3");
 	        	}
 	        	
 	        	else if(currentselectedbutton == "red2") {
@@ -1138,6 +1152,7 @@ public class Nira implements ActionListener {
 	        		red2.setBounds(red2_x, red2_y, 50, 50);
 					blank3.setBounds(blank3_x, blank3_y, 60, 60);
 	        		redb++;
+	        		System.out.println("red2 to blank3");
 	        	}
 	        	
 	        	else if(currentselectedbutton == "red3") {
@@ -1150,6 +1165,7 @@ public class Nira implements ActionListener {
 	        		red3.setBounds(red3_x, red3_y, 50, 50);
 					blank3.setBounds(blank3_x, blank3_y, 60, 60);
 	        		redc++;
+	        		System.out.println("red3 to blank3");
 	        	}
 	        	
 	        	else if(currentselectedbutton == "blue1") {
@@ -1162,6 +1178,7 @@ public class Nira implements ActionListener {
 	        		blue1.setBounds(blue1_x, blue1_y, 50, 50);
 					blank3.setBounds(blank3_x, blank3_y, 60, 60);
 	        		bluea++;
+	        		System.out.println("blue1 to blank3");
 	        	}
 	        	
 	        	else if(currentselectedbutton == "blue2") {
@@ -1174,6 +1191,7 @@ public class Nira implements ActionListener {
 	        		blue2.setBounds(blue2_x, blue2_y, 50, 50);
 					blank3.setBounds(blank3_x, blank3_y, 60, 60);
 	        		blueb++;
+	        		System.out.println("blue2 to blank3");
 	        	}
 	        	
 	        	else if(currentselectedbutton == "blue3"){
@@ -1186,6 +1204,7 @@ public class Nira implements ActionListener {
 	        		blue3.setBounds(blue3_x, blue3_y, 50, 50);
 					blank3.setBounds(blank3_x, blank3_y, 60, 60);
 	        		bluec++;
+	        		System.out.println("blue3 to blank3");
 	        	}
 				}
 			
@@ -1726,6 +1745,7 @@ public class Nira implements ActionListener {
 						 blank3.setEnabled(false);
 						 blank3.setOpaque(false);
 					 }
+					
 						b1 = false;
 						b2 = false;
 						b3 = false;
@@ -1736,8 +1756,9 @@ public class Nira implements ActionListener {
 		
 	
 	public void checknira() {
+		
 		if(((reda>0)&&(redb>0))&&(redc>0)) {
-			
+			System.out.println("Checking Nira for red");
 		if((red1_x == 200)&&(red1_y == 300)) {
 				if((red2_x == 50)&&(red2_y == 500)) {
 					if((red3_x == 350)&&(red3_y == 100)) {
@@ -1821,25 +1842,23 @@ public class Nira implements ActionListener {
 				if((red3_x == 50)&&(red3_y == 500)) {
 								redNIRA = true;
 				}
-			}
-			else if((red2_x == 50)&&(red2_y == 500)) {
-				if((red3_x == 200)&&(red3_y == 300)) {
-							redNIRA = true;
+			} 
+			else if ((red2_x == 50) && (red2_y == 500)) {
+				if ((red3_x == 200) && (red3_y == 300)) {
+								redNIRA = true;
 				}
 			}
 		}
-		
+
 	}
-		
-		
-		
-	if(((bluea>0)&&(blueb>0))&&(bluec>0)) {
-		
-		if((blue1_x == 200)&&(blue1_y == 300)) {
-			if((blue2_x == 50)&&(blue2_y == 500)) {
-				if((blue3_x == 350)&&(blue3_y == 100)) {
+
+	if (((bluea > 0) && (blueb > 0)) && (bluec > 0)) {
+		System.out.println("Checking Nira for blue");
+		if ((blue1_x == 200) && (blue1_y == 300)) {
+		    if ((blue2_x == 50) && (blue2_y == 500)) {
+			   if ((blue3_x == 350) && (blue3_y == 100)) {
 					blueNIRA = true;
-				}
+			   }
 			}
 			else if((blue2_x == 350)&&(blue2_y == 100)) {
 				if((blue3_x == 50)&&(blue3_y == 500)) {
@@ -1933,6 +1952,7 @@ public class Nira implements ActionListener {
 	}
 		
 		if(redNIRA == true) {
+			System.out.println("player with red achieved Nira");
     		red1.setEnabled(false);
     		red2.setEnabled(false);
     		red3.setEnabled(false);
@@ -1945,8 +1965,10 @@ public class Nira implements ActionListener {
     		playerr1.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 3));
     		playerr2.setBorder(null);
     		colorlock = "Yellow";
+    		System.out.println("Game Breaked!");
     		
     	}else if(blueNIRA == true) {
+    		System.out.println("player with blue achieved Nira");
     		red1.setEnabled(false);
     		red1.setOpaque(false);
     		red2.setEnabled(false);
@@ -1959,7 +1981,10 @@ public class Nira implements ActionListener {
     		playerr1.setBorder(null);
     		playerr2.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 3));
     		colorlock = "Yellow";
+    		System.out.println("Game Breaked!");
     		
+    	}else if(((reda>0)&&(redb>0)&&(redc>0))||((bluea>0)&&(blueb>0)&&(bluec>0))){
+    		System.out.println("No player achieved Nira yet");
     	}
 		
 		
@@ -2015,6 +2040,7 @@ public class Nira implements ActionListener {
 	
 	
 	public void botbrain() {
+		if((redNIRA == false)&&(blueNIRA == false)) {
 		player = "red";
 		playerr1.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
 		playerr2.setBorder(null);
@@ -2023,6 +2049,7 @@ public class Nira implements ActionListener {
 			if((blank1_x == 45)&&(blank1_y == 295)) {
 				currentselectedbutton = "red1";
 				BlankButtonWorking(blank1);
+				
 			}
 			else if((blank1_x == 195)&&(blank1_y == 295)) {
 				currentselectedbutton = "red1";
@@ -2083,8 +2110,11 @@ public class Nira implements ActionListener {
 					currentselectedbutton = "red1";		
 					BlankButtonWorking(blank3);
 				}
+				else {
+					use2ndmove = true;
+				}
 			}
-			else if((red2_x == 200)&&(red2_y == 100)) {
+			if((use2ndmove == true)&&((red2_x == 200)&&(red2_y == 100))) {
 				if((blank1_x == 195)&&(blank1_y == 295)) {
 					currentselectedbutton = "red2";		
 					BlankButtonWorking(blank1);
@@ -2109,6 +2139,7 @@ public class Nira implements ActionListener {
 					currentselectedbutton = "red2";		
 					BlankButtonWorking(blank3);
 				}
+				
 			}
 			
 		}
@@ -2445,17 +2476,200 @@ public class Nira implements ActionListener {
 					}
 				}
 			}
+			if(isitmatchable == false) {
+				notmatchable = true;
+			}
+			else if(isitmatchable == true) {
+				notmatchable = false;
+			}
+			
+		}
+		if((notmatchable == true)&&((reda>0)&&(redb>0)&&(redc>0))) {
+			if(blankenabled == false) {
+				blankenabled = redmove(red1);
+			}
+			if(blankenabled == false) {
+				blankenabled = redmove(red2);
+			}
+			if(blankenabled == false) {
+				blankenabled = redmove(red3);
+			}
 		}
 		
 		
-				
-			
+		isitmatchable = false;
+		blankenabled = false;
 		
 		
-		
-	
+	}
 
 	}
+	
+	
+	
+	
+	
+	public boolean redmove(JButton redbutton) {
+		System.out.println("redmove function reached");
+		boolean blankisnear = false;
+		int tempred_x = 0,tempred_y = 0;
+		
+		if(redbutton == red1) {
+			tempred_x = red1_x;
+			tempred_y = red1_y;
+			currentselectedbutton = "red1";
+			System.out.println("check for red1 possible move");
+		}
+		else if(redbutton == red2) {
+			tempred_x = red2_x;
+			tempred_y = red2_y;
+			currentselectedbutton = "red2";
+		}
+		else if(redbutton == red3) {
+			tempred_x = red3_x;
+			tempred_y = red3_y;
+			currentselectedbutton = "red3";
+		}
+		
+		
+		if((tempred_x == 50)&&(tempred_y == 100)) {
+			if(((blank1_x == 45)||(blank1_x == 195))&&((blank1_y == 95)||(blank1_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank1;
+			}
+			else if(((blank2_x == 45)||(blank2_x == 195))&&((blank2_y == 95)||(blank2_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank2;
+			}
+			else if(((blank3_x == 45)||(blank3_x == 195))&&((blank3_y == 95)||(blank3_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank3;
+			}
+		}
+		else if((tempred_x == 200)&&(tempred_y == 100)) {
+			if(((blank1_x == 45)||(blank1_x == 195)||(blank1_x == 345))&&((blank1_y == 95)||(blank1_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank1;
+			}
+			else if(((blank2_x == 45)||(blank2_x == 195)||(blank2_x == 345))&&((blank2_y == 95)||(blank2_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank2;
+			}
+			else if(((blank3_x == 45)||(blank3_x == 195)||(blank2_x == 345))&&((blank3_y == 95)||(blank3_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank3;
+			}
+		}
+		else if((tempred_x == 350)&&(tempred_y == 100)) {
+			if(((blank1_x == 345)||(blank1_x == 195))&&((blank1_y == 95)||(blank1_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank1;
+			}
+			else if(((blank2_x == 345)||(blank2_x == 195))&&((blank2_y == 95)||(blank2_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank2;
+			}
+			else if(((blank3_x == 345)||(blank3_x == 195))&&((blank3_y == 95)||(blank3_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank3;
+			}
+		}
+		else if((tempred_x == 50)&&(tempred_y == 300)) {
+			if(((blank1_x == 45)||(blank1_x == 195))&&((blank1_y == 95)||(blank1_y == 295)||(blank1_y == 345))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank1;
+			}
+			else if(((blank2_x == 45)||(blank2_x == 195))&&((blank2_y == 95)||(blank2_y == 295)||(blank2_y == 345))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank2;
+			}
+			else if(((blank3_x == 45)||(blank3_x == 195))&&((blank3_y == 95)||(blank3_y == 295)||(blank3_y == 345))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank3;
+			}
+		}
+		else if((tempred_x == 200)&&(tempred_y == 300)) {
+			if(((blank1_x == 45)||(blank1_x == 195)||(blank1_x == 345))&&((blank1_y == 95)||(blank1_y == 295)||(blank1_y == 345))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank1;
+			}
+			else if(((blank2_x == 45)||(blank2_x == 195)||(blank2_x == 345))&&((blank2_y == 95)||(blank2_y == 295)||(blank2_y == 345))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank2;
+			}
+			else if(((blank3_x == 45)||(blank3_x == 195)||(blank3_x == 345))&&((blank3_y == 95)||(blank3_y == 295)||(blank3_y == 345))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank3;
+			}
+		}
+		else if((tempred_x == 350)&&(tempred_y == 300)) {
+			if(((blank1_x == 345)||(blank1_x == 195))&&((blank1_y == 95)||(blank1_y == 295)||(blank1_y == 495))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank1;
+			}
+			else if(((blank2_x == 345)||(blank2_x == 195))&&((blank2_y == 95)||(blank2_y == 295)||(blank2_y == 495))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank2;
+			}
+			else if(((blank3_x == 345)||(blank3_x == 195))&&((blank3_y == 95)||(blank3_y == 295)||(blank3_y == 495))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank3;
+			}
+		}
+		else if((tempred_x == 50)&&(tempred_y == 500)) {
+			if(((blank1_x == 45)||(blank1_x == 195))&&((blank1_y == 495)||(blank1_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank1;
+			}
+			else if(((blank2_x == 45)||(blank2_x == 195))&&((blank2_y == 495)||(blank2_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank2;
+			}
+			else if(((blank3_x == 45)||(blank3_x == 195))&&((blank3_y == 495)||(blank3_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank3;
+			}
+		}
+		else if((tempred_x == 200)&&(tempred_y == 500)) {
+			if(((blank1_x == 45)||(blank1_x == 195)||(blank1_x == 345))&&((blank1_y == 495)||(blank1_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank1;
+			}
+			else if(((blank2_x == 45)||(blank2_x == 195)||(blank2_x == 345))&&((blank2_y == 495)||(blank2_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank2;
+			}
+			else if(((blank3_x == 45)||(blank3_x == 195)||(blank2_x == 345))&&((blank3_y == 495)||(blank3_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank3;
+			}
+		}
+		else if((tempred_x == 350)&&(tempred_y == 500)) {
+			if(((blank1_x == 345)||(blank1_x == 195))&&((blank1_y == 495)||(blank1_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank1;
+			}
+			else if(((blank2_x == 345)||(blank2_x == 195))&&((blank2_y == 495)||(blank2_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank2;
+			}
+			else if(((blank3_x == 345)||(blank3_x == 195))&&((blank3_y == 495)||(blank3_y == 295))) {
+				blankisnear = true;
+				blankbuttonselection2 = blank3;
+			}
+		}
+		
+		
+		if(blankisnear == true) {
+			BlankButtonWorking(blankbuttonselection2);
+		}
+		
+		
+		return blankisnear;
+	}
+	
+	
+	
 	
 	public boolean isMatchable(JButton needmatching, JButton match1, JButton match2, String checkingorder) {
 		int needmatching_x = 0, needmatching_y = 0, match1_x = 0, match1_y = 0, match2_x = 0, match2_y = 0;
